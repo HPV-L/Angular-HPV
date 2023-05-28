@@ -16,8 +16,10 @@ body {
 	box-sizing:border-box;
 	outline:none;
 }
-img{
-	max-width:100%;
+.product-thumb-link img{
+	width:100%;
+    height: 350px;
+    object-fit: cover;
 }
 a:hover,a:focus{
 	text-decoration:none;
@@ -1485,7 +1487,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .footer {
     background: #1b1b1b none repeat scroll 0 0;
-    padding: 100px 0 95px;
+    padding: 20px 0 40px;
 }
 .menu-footer li {
     padding: 0 15px;
@@ -4509,6 +4511,7 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
 }
 .big-title {
+    color: white;
     font-family: lato;
     font-size: 60px;
     font-weight: 700;
@@ -5430,6 +5433,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 86px 0 100px;
 }
 .gallery-product-tabs .big-title {
+    color: #848a3e;
     margin-bottom: 50px;
     text-align: center;
 }
@@ -5463,7 +5467,7 @@ h1,h2,h3,h4,h5,h6{
 	height:2px;
 	width:100%;
 	content:"";
-	background:#ff3e3e;
+	background:#848a3e;
 	bottom:-18px;
 	left:0;
 	transition:all 0.3s ease-out 0s;
@@ -5472,14 +5476,14 @@ h1,h2,h3,h4,h5,h6{
 	-webkit-transform:scaleX(0);
 }
 .title-gal-pro-tab a:hover{
-	color:#ff3e3e;
+	color:#848a3e   ;
 }
 .title-gal-pro-tab li.active a::after{
 	transform:scaleX(1);
 	-webkit-transform:scaleX(1);
 }
 .title-gal-pro-tab li.active a{
-	color:#ff3e3e;
+	color:#848a3e;
 }
 .title-gal-pro-tab li:last-child {
     margin-right: 0;
@@ -5832,10 +5836,10 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 120px;
 }
 .footer-top4 {
-    background: #333 none repeat scroll 0 0;
+    background: #535446 none repeat scroll 0 0;
 }
 .footer-bottom4 {
-    background: #000 none repeat scroll 0 0;
+    background: #141507 none repeat scroll 0 0;
     padding: 30px 0;
 }
 
@@ -5933,7 +5937,7 @@ h1,h2,h3,h4,h5,h6{
     color: #ccc;
 }
 .menu-footer4 li a:hover{
-	color:#ff3e3e;	
+	color:#9b9f67;	
 }
 .menu-footer4 li {
     margin-bottom: 5px;
@@ -5945,7 +5949,7 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
 }
 .service-footer p i.fa {
-    color: #ff3e3e;
+    color: #9b9f67;
     font-size: 30px;
     left: 0;
     position: absolute;
@@ -5979,7 +5983,7 @@ h1,h2,h3,h4,h5,h6{
 	color:#ff3e3e;
 }
 .social-contact4 .list-contact-footer p::before{
-	color:#ff3e3e;
+	color:#9b9f5f;
 }
 .footer-bottom4 .copyright3 > p a {
     color: #fff;
@@ -8869,7 +8873,7 @@ h1,h2,h3,h4,h5,h6{
     -webkit-transform: translateX(0);
 }
 .btn-link11::after {
-    background: #d1525f none repeat scroll 0 0;
+    background: #767c32 none repeat scroll 0 0;
     content: attr(data-hover);
     height: 100%;
     left: 0;
@@ -9171,7 +9175,7 @@ h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
 }
 .supper-deal11 {
-    background: rgba(0, 0, 0, 0) url("../images/home11/parallax-2.png") no-repeat fixed center center;
+    background: rgba(0, 0, 0, 0) url("../images/banner.jpg") no-repeat fixed center center;
     padding: 100px 0;
 }
 .product-supper11 {
@@ -9243,7 +9247,7 @@ h1,h2,h3,h4,h5,h6{
     text-transform: uppercase;
 }
 .intro-deal11 > h2 {
-    color: #d1525f;
+    color: #767c32;
     font-size: 90px;
     font-weight: 700;
     margin: -5px 0 7px;
@@ -9360,13 +9364,13 @@ h1,h2,h3,h4,h5,h6{
     margin-left: -29px;
 }
 .btn-link11.style2 {
-	background:#D1525F;
+	background:#767c32;
 }
 .btn-link11.style2::after{
 	background:#333;
 }
 .btn-link11.style2 span {
-    background: #D1525F none repeat scroll 0 0;
+    background: #767c32 none repeat scroll 0 0;
 }
 .intro-deal11 .btn-link11.style2{
 	height:60px;
@@ -9894,14 +9898,16 @@ h1,h2,h3,h4,h5,h6{
 /*************************************************************************************
 									Home 13
 *************************************************************************************/
-.banner-count {
-    margin-top: 50px;
+.banner-count-thumb{
     position: relative;
 	transition:all 0.3s ease-out 0s;
 	-webkit-transition:all 0.3s ease-out 0s;
 }
+.banner-count-thumb img{
+    max-width: 100%;
+}
 .banner-count-info {
-    bottom: 100px;
+    bottom: 250px;
     left: 0;
     position: absolute;
     text-align: center;
@@ -9921,9 +9927,8 @@ h1,h2,h3,h4,h5,h6{
 	-webkit-transition:all 0.3s ease-out 0s;
 }
 .banner-count-info .shopnow:hover{
-	background-color:#ff3e3e;
 	color:#fff;
-	border-color:#ff3e3e;
+    background-color: #1a1a1a;
 }
 .main-header13 {
     padding: 30px 0 25px;
@@ -17271,7 +17276,7 @@ body.active .element-control{
 	color:#25c6a5;
 }
 .list-footer-box21 .menu-footer4 li a:hover {
-    color: #25c6a5;
+    color: #9b9f67;
 }
 .list-footer-box21 .footer-box4.menu-footer4 {
     padding-left: 50px;
