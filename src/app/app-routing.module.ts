@@ -5,7 +5,6 @@ import { BannerComponent } from './component/banner/banner.component';
 
 const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
-    {path:"",component:BannerComponent},
   ]}
 ];
 
