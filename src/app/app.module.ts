@@ -6,8 +6,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { ChartModule} from "primeng/chart";
 import { MenuModule } from 'primeng/menu';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,8 +23,22 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 // PrimeNG
 import { CalendarModule } from 'primeng/calendar';
 import { PanelMenuModule } from 'primeng/panelmenu';
+import { TableModule } from 'primeng/table';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RatingModule } from 'primeng/rating';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DialogModule } from 'primeng/dialog';
 
 import { FormsModule } from '@angular/forms';
+import { AdminProductListComponent } from './pages/admin/admin-product-list/admin-product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     ListproductComponent,
     SuperDealComponent,
     MarketPlaceComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +66,19 @@ import { FormsModule } from '@angular/forms';
     MenuModule,
     TableModule,
     ButtonModule,
-    StyleClassModule
+    StyleClassModule,
+    FileUploadModule,
+    RippleModule,
+    ToastModule,
+    ToolbarModule,
+    RatingModule,
+    InputTextModule,
+    InputTextareaModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    DialogModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
