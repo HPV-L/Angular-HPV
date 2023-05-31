@@ -38,6 +38,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule } from '@angular/forms';
+
 import { AdminProductListComponent } from './pages/admin/admin-product-list/admin-product-list.component';
 import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
 import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admin-product-edit.component';
@@ -45,6 +46,9 @@ import { ChipsModule } from "primeng/chips";
 import { InputMaskModule } from "primeng/inputmask";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
+
+import { HomePageComponent } from './pages/home-page/home-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,9 +59,13 @@ import { MultiSelectModule } from "primeng/multiselect";
     SuperDealComponent,
     MarketPlaceComponent,
     DashboardComponent,
+
     AdminProductListComponent,
     AdminProductAddComponent,
     AdminProductEditComponent
+
+    HomePageComponent
+
   ],
   imports: [
     BrowserModule,
