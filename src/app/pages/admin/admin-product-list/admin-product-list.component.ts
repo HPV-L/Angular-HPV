@@ -22,20 +22,19 @@ export class AdminProductListComponent implements OnInit {
 
   product: | IProduct = {};
 
+
   selectedProducts: IProduct[] = [];
 
   submitted: boolean = false;
 
   cols: any[] = [];
- 
-
-
 
   rowsPerPageOptions = [5, 10, 20];
 
   constructor(private productService: ProductService, private messageService: MessageService) { }
 
   ngOnInit() {
+
       this.productService.getAllProducts().subscribe(data => this.products = data);
       this.cols = [
           { field: 'name', header: 'Name' },
@@ -93,6 +92,7 @@ export class AdminProductListComponent implements OnInit {
 
 
   findIndexById(id: number): number {
+
       let index = -1;
       for (let i = 0; i < this.products.length; i++) {
           if (this.products[i].id === id) {

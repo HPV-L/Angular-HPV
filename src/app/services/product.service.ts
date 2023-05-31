@@ -28,5 +28,6 @@ export class ProductService {
   getProductsByCategoryId(categoryId: number): Observable<IProduct[]> {
     const url = `http://localhost:3000/products?ProductCateID=${categoryId}`;
     return this.http.get<IProduct[]>(url);
+
   }
 }

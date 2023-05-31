@@ -16,7 +16,9 @@
                 </ng-template>
             </p-toolbar>
 
+
             <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name', 'code','importPrice','price','date','updateDay']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
+
                 <ng-template pTemplate="caption">
                     <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
                         <h5 class="m-0">Manage Products</h5>
@@ -49,7 +51,6 @@
                         <td>
                             <p-tableCheckbox [value]="product"></p-tableCheckbox>
                         </td>
-                       
                         <td style="width:14%; min-width:10rem;"><span class="p-column-title">Code</span>
                             {{product.code || product.id}}
                         </td>

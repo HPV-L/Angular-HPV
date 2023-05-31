@@ -9,7 +9,6 @@ import { MenuModule } from 'primeng/menu';
 import { StyleClassModule } from 'primeng/styleclass';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
@@ -38,7 +37,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
-
 import { FormsModule } from '@angular/forms';
 import { AdminProductListComponent } from './pages/admin/admin-product-list/admin-product-list.component';
 import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
@@ -47,9 +45,6 @@ import { ChipsModule } from "primeng/chips";
 import { InputMaskModule } from "primeng/inputmask";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
