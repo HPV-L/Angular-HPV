@@ -59,13 +59,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     SuperDealComponent,
     MarketPlaceComponent,
     DashboardComponent,
-
     AdminProductListComponent,
     AdminProductAddComponent,
-    AdminProductEditComponent
-
+    AdminProductEditComponent,
     HomePageComponent
-
   ],
   imports: [
     BrowserModule,
