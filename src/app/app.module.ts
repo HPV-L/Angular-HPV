@@ -6,9 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { ChartModule} from "primeng/chart";
 import { MenuModule } from 'primeng/menu';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,9 +24,31 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 // PrimeNG
 import { CalendarModule } from 'primeng/calendar';
 import { PanelMenuModule } from 'primeng/panelmenu';
-
+import { TableModule } from 'primeng/table';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RatingModule } from 'primeng/rating';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DialogModule } from 'primeng/dialog';
 import { FormsModule } from '@angular/forms';
+
+import { AdminProductListComponent } from './pages/admin/admin-product-list/admin-product-list.component';
+import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
+import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admin-product-edit.component';
+import { ChipsModule } from "primeng/chips";
+import { InputMaskModule } from "primeng/inputmask";
+import { CascadeSelectModule } from "primeng/cascadeselect";
+import { MultiSelectModule } from "primeng/multiselect";
+
 import { HomePageComponent } from './pages/home-page/home-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +59,19 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     SuperDealComponent,
     MarketPlaceComponent,
     DashboardComponent,
+
+    AdminProductListComponent,
+    AdminProductAddComponent,
+    AdminProductEditComponent
+
     HomePageComponent
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterOutlet,
     CalendarModule,
     PanelMenuModule,
@@ -55,7 +83,22 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     MenuModule,
     TableModule,
     ButtonModule,
-    StyleClassModule
+    StyleClassModule,
+    FileUploadModule,
+    RippleModule,
+    ToastModule,
+    ToolbarModule,
+    RatingModule,
+    InputTextModule,
+    InputTextareaModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    DialogModule,
+    ChipsModule ,
+    InputMaskModule,
+    CascadeSelectModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "code": "39638",
+      "name": "Mitchell",
+      "description": "Kpg. Sugiono No. 95",
+      "importPrice": "123",
+      "price": "1231123",
+      "quantity": "1",
+      "status": 1,
+      "category": {
+        "name": "Option 2",
+        "catecateId": 2
+      },
+      "image": "C:\\fakepath\\WIN_20230317_14_36_35_Pro.jpg",
+      "date": "2023-05-31 01:23:20",
+      "updateDay": "Chưa cập nhật",
+      "id": 1
+    },
+    {
+      "code": "345678",
+      "name": "sản phẩm 2 update",
+      "description": "aeszfgdxfcghjvgcfdsazfxgvhbj update",
+      "importPrice": "2222",
+      "price": "213123123",
+      "quantity": "22",
+      "status": 1,
+      "category": {
+        "name": "Option 2",
+        "cate": 2
+      },
+      "image": "C:\\fakepath\\WIN_20230317_14_36_27_Pro - Copy.jpg",
+      "date": "2023-05-31 01:29:08",
+      "updateDay": "2023-05-31 15:43:01",
+      "id": 2
+    },
+    {
+      "code": "retdyfg",
+      "name": "sản phẩm 2 update aesrgdthf",
+      "description": "aeszfgdxfcghjvgcfdsazfxgvhbj update",
+      "importPrice": "2221 ",
+      "price": "123432561",
+      "quantity": "21",
+      "status": 1,
+      "category": {
+        "name": "Option 2",
+        "cate": 2
+      },
+      "image": "C:\\fakepath\\img1.jpg",
+      "date": "2023-05-31 01:29:08",
+      "updateDay": "2023-05-31 02:40:19",
+      "id": 3
+    },
+    {
+      "code": "dfsghjj",
+      "name": "test ảnh",
+      "description": "243567234567",
+      "importPrice": "435678",
+      "price": "43567",
+      "quantity": "43567",
+      "status": 1,
+      "category": {
+        "name": "Option 2",
+        "cate": 2
+      },
+      "image": "C:\\fakepath\\banner.jpg",
+      "date": "2023-05-31 02:43:33",
+      "updateDay": "Chưa chập nhật",
+      "id": 4
+    }
+  ]
+}
