@@ -20,7 +20,8 @@ export class AdminProductListComponent implements OnInit {
 
   products: IProduct[] = [];
 
-  product: IProduct = {};
+  product: | IProduct = {};
+
 
   selectedProducts: IProduct[] = [];
 
@@ -28,27 +29,22 @@ export class AdminProductListComponent implements OnInit {
 
   cols: any[] = [];
 
-  statuses: any[] = [];
-
   rowsPerPageOptions = [5, 10, 20];
 
   constructor(private productService: ProductService, private messageService: MessageService) { }
 
   ngOnInit() {
-      this.productService.getProducts().subscribe(data => this.products = data);
+
+      this.productService.getAllProducts().subscribe(data => this.products = data);
       this.cols = [
-          { field: 'product', header: 'Product' },
+          { field: 'name', header: 'Name' },
           { field: 'price', header: 'Price' },
           { field: 'category', header: 'Category' },
-          { field: 'rating', header: 'Reviews' },
-          { field: 'inventoryStatus', header: 'Status' }
+          { field: 'quantity', header: 'Quantity' },
+          { field: 'date', header: 'Date' }
       ];
 
-      this.statuses = [
-          { label: 'INSTOCK', value: 'instock' },
-          { label: 'LOWSTOCK', value: 'lowstock' },
-          { label: 'OUTOFSTOCK', value: 'outofstock' }
-      ];
+    
   }
 
   openNew() {
@@ -59,16 +55,19 @@ export class AdminProductListComponent implements OnInit {
 
   deleteSelectedProducts() {
       this.deleteProductsDialog = true;
+     console.log(this.product);
+     
+    
   }
 
-  editProduct(product: IProduct) {
-      this.product = { ...product };
-      this.productDialog = true;
-  }
 
   deleteProduct(product: IProduct) {
       this.deleteProductDialog = true;
-      this.product = { ...product };
+      this.productService.deleteProduct(product.id).subscribe(() =>{
+        // this.products = this.products.filter(item => item.id !== product.id)
+        this.product = { ...product };
+    })
+      
   }
 
   confirmDeleteSelected() {
@@ -90,32 +89,10 @@ export class AdminProductListComponent implements OnInit {
       this.submitted = false;
   }
 
-  saveProduct() {
-      this.submitted = true;
 
-      if (this.product.name?.trim()) {
-          if (this.product.id) {
-              // @ts-ignore
-              this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value : this.product.inventoryStatus;
-              this.products[this.findIndexById(this.product.id)] = this.product;
-              this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
-          } else {
-              this.product.id = this.createId();
-              this.product.code = this.createId();
-              this.product.image = 'product-placeholder.svg';
-              // @ts-ignore
-              this.product.inventoryStatus = this.product.inventoryStatus ? this.product.inventoryStatus.value : 'INSTOCK';
-              this.products.push(this.product);
-              this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
-          }
 
-          this.products = [...this.products];
-          this.productDialog = false;
-          this.product = {};
-      }
-  }
+  findIndexById(id: number): number {
 
-  findIndexById(id: string): number {
       let index = -1;
       for (let i = 0; i < this.products.length; i++) {
           if (this.products[i].id === id) {
