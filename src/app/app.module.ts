@@ -27,6 +27,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { FormsModule } from '@angular/forms';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     ListproductComponent,
     SuperDealComponent,
     MarketPlaceComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
