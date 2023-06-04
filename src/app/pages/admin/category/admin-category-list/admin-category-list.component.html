@@ -1,4 +1,3 @@
-<p>admin-category-list works!</p>
 <div class="grid">
     <div class="col-12">
         <div class="card px-6 py-6">
@@ -7,7 +6,7 @@
                 <ng-template pTemplate="left">
                     <div class="my-2">
                         <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" routerLink="/admin/product/add" ></button>
-                        <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+                        <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedCategories || !selectedCategories.length"></button>
                     </div>
                 </ng-template>
 
@@ -18,7 +17,7 @@
             </p-toolbar>
 
 
-            <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name', 'code','importPrice','price','date','updateDay']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
+            <p-table #dt [value]="categories" [columns]="cols" responsiveLayout="scroll" [rows]="10" [globalFilterFields]="['name', 'code','date','updateDay']" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [(selection)]="selectedCategories" selectionMode="multiple" [rowHover]="true" dataKey="id">
 
                 <ng-template pTemplate="caption">
                     <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
@@ -35,13 +34,8 @@
                             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                         </th>
                        
-                        <th pSortableColumn="code">Mã sản phẩm<p-sortIcon field="code"></p-sortIcon></th>
-                        <th pSortableColumn="name">Tên sản phẩm<p-sortIcon field="name"></p-sortIcon></th>
-                        <th>Ảnh</th>
-                        <th pSortableColumn="importPrice">Giá nhập<p-sortIcon field="price"></p-sortIcon></th>
-                        <th pSortableColumn="price">Giá bán<p-sortIcon field="price"></p-sortIcon></th>
-                        <th pSortableColumn="category">Danh mục<p-sortIcon field="category"></p-sortIcon></th>
-                        <th pSortableColumn="quantity">Số lượng<p-sortIcon field="quantity"></p-sortIcon></th>
+                        <th pSortableColumn="code">Mã danh mục<p-sortIcon field="code"></p-sortIcon></th>
+                        <th pSortableColumn="name">Tên danh mục<p-sortIcon field="name"></p-sortIcon></th>
                         <th pSortableColumn="date">Ngày đăng<p-sortIcon field="date"></p-sortIcon></th>
                         <th pSortableColumn="updateDay">Ngày sửa<p-sortIcon field="date"></p-sortIcon></th>
                         <th>Chức Năng</th>
@@ -50,48 +44,25 @@
                 <ng-template pTemplate="body" let-product>
                     <tr>
                         <td>
-                            <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                            <p-tableCheckbox [value]="category"></p-tableCheckbox>
                         </td>
                         <td style="width:14%; min-width:10rem;"><span class="p-column-title">Code</span>
-                            {{product.code || product.id}}
+                            {{category.code || category.id}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Name</span>
-                            {{product.name}}
-                        </td>
-                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Image</span>
-                            <img [src]="product.image" width="100" class="shadow-4" />
-                        </td>
-                        
-                        <td style="width:14%; min-width:8rem;">
-                            <span class="p-column-title">Price</span>
-                            {{product.importPrice | currency:'VND'}}
-                        </td>
-                        <td style="width:14%; min-width:8rem;">
-                            <span class="p-column-title">Price</span>
-                            {{product.price | currency:'VND'}}
-                        </td>
-                        <td style="width:14%; min-width:10rem;">
-                            <span class="p-column-title">Category</span>
-                            {{product.category.name}}
-                        </td>
-                        <td style="width:14%; min-width:10rem;">
-                            <span class="p-column-title">Quantity</span>
-                            {{product.quantity}}
+                            {{category.name}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Date</span>
-                            {{product.date}}
+                            {{category.date}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">updateDay</span>
-                            {{product.updateDay}}
+                            {{category.updateDay}}
                         </td>
                         
                         
-                        <!-- <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Status</span>
-                            <span [class]="'product-badge status-' + (product.inventoryStatus ? product.inventoryStatus.toLowerCase() : '')">{{product.inventoryStatus}}</span>
-                        </td> -->
                         <td>
                             <div class="flex">
                                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" routerLink="{{product.id}}/edit"></button>
@@ -104,24 +75,24 @@
         </div>
 
 
-        <p-dialog [(visible)]="deleteProductDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+        <p-dialog [(visible)]="deleteCategoryDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
             <div class="flex align-items-center justify-content-center">
                 <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
-                <span *ngIf="product">Are you sure you want to delete <b>{{product.name}}</b>?</span>
+                <span *ngIf="category">Are you sure you want to delete <b>{{category.name}}</b>?</span>
             </div>
             <ng-template pTemplate="footer">
-                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteProductDialog = false"></button>
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteCategoryDialog = false"></button>
                 <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes" (click)="confirmDelete()"></button>
             </ng-template>
         </p-dialog>
 
-        <p-dialog [(visible)]="deleteProductsDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+        <p-dialog [(visible)]="deleteCategorysDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
             <div class="flex align-items-center justify-content-center">
                 <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
-                <span>Are you sure you want to delete selected products?</span>
+                <span>Are you sure you want to delete selected categories?</span>
             </div>
             <ng-template pTemplate="footer">
-                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteProductsDialog = false"></button>
+                <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No" (click)="deleteCategorysDialog = false"></button>
                 <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes" (click)="confirmDeleteSelected()"></button>
             </ng-template>
         </p-dialog>

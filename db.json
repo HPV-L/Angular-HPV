@@ -37,6 +37,7 @@
   ],
   "category": [
     {
+      "code": "345678",
       "name": "adsfxcfvb",
       "date": "2023-06-05 00:26:44",
       "updateDay": "Chưa chập nhật",
@@ -47,6 +48,19 @@
       "date": "2023-06-05 00:53:54",
       "updateDay": "Chưa chập nhật",
       "id": 2
+    },
+    {
+      "code": "dfsghjj",
+      "name": "Phuong ngu oc bo",
+      "date": "2023-06-05 01:30:57",
+      "updateDay": "Chưa chập nhật",
+      "id": 3
+    },
+    {
+      "name": "Phuong ngu oc bo an cut",
+      "date": "2023-06-05 01:51:08",
+      "updateDay": "Chưa chập nhật",
+      "id": 4
     }
   ]
 }

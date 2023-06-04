@@ -67,7 +67,6 @@ export class AdminProductListComponent implements OnInit {
         // this.products = this.products.filter(item => item.id !== product.id)
         this.product = { ...product };
     })
-      
   }
 
   confirmDeleteSelected() {

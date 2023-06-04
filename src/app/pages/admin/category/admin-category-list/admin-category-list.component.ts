@@ -1,117 +1,116 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { IProduct } from 'src/app/interfaces/product';
-import { ProductService } from 'src/app/services/product.service';
+import { ICategory } from 'src/app/interfaces/category';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-admin-category-list',
   templateUrl: './admin-category-list.component.html',
-  styleUrls: ['./admin-category-list.component.scss']
+  styleUrls: ['./admin-category-list.component.scss'],
+  providers: [MessageService]
 })
-export class AdminCategoryListComponent {
-  productDialog: boolean = false;
+export class AdminCategoryListComponent implements OnInit {
 
-  deleteProductDialog: boolean = false;
+    categoryDialog: boolean = false;
+  
+    deleteCategoryDialog: boolean = false;
+  
+    deleteCategorysDialog: boolean = false;
+  
+    categories: ICategory[] = [];
+  
+    category: | ICategory = {};
+  
+  
+    selectedCategories: ICategory[] = [];
+  
+    submitted: boolean = false;
+  
+    cols: any[] = [];
+  
+    rowsPerPageOptions = [5, 10, 20];
+  
+    constructor(private categoryService: CategoryService, private messageService: MessageService) { }
+  
+    ngOnInit() {
+  
+        this.categoryService.getAllCategory().subscribe(data => this.categories = data);
+        this.cols = [
+            { field: 'name', header: 'Name' },
+            { field: 'price', header: 'Price' },
+            { field: 'category', header: 'Category' },
+            { field: 'quantity', header: 'Quantity' },
+            { field: 'date', header: 'Date' }
+        ];
+    }
+  
+    openNew() {
+        this.category = {};
+        this.submitted = false;
+        this.categoryDialog = true;
+    }
+  
+    deleteSelectedProducts() {
+        this.deleteCategorysDialog = true;
+       console.log(this.category);
+    }
+  
+  
+    deleteProduct(category: ICategory) {
+        this.deleteCategoryDialog = true;
+        this.categoryService.deleteCategory(category.id).subscribe(() =>{
+          // this.products = this.products.filter(item => item.id !== product.id)
+          this.category = { ...category };
+      })
+        
+    }
 
-  deleteProductsDialog: boolean = false;
-
-  products: IProduct[] = [];
-
-  product: | IProduct = {};
-
-
-  selectedProducts: IProduct[] = [];
-
-  submitted: boolean = false;
-
-  cols: any[] = [];
-
-  rowsPerPageOptions = [5, 10, 20];
-
-  constructor(private productService: ProductService, private messageService: MessageService) { }
-
-  ngOnInit() {
-
-      this.productService.getAllProducts().subscribe(data => this.products = data);
-      this.cols = [
-          { field: 'name', header: 'Name' },
-          { field: 'price', header: 'Price' },
-          { field: 'category', header: 'Category' },
-          { field: 'quantity', header: 'Quantity' },
-          { field: 'date', header: 'Date' }
-      ];
-
-    
+  
+    confirmDeleteSelected() {
+        this.deleteCategorysDialog = false;
+        this.categories = this.categories.filter(val => !this.selectedCategories.includes(val));
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
+        this.selectedCategories = [];
+    }
+  
+    confirmDelete() {
+        this.deleteCategoryDialog = false;
+        this.categories = this.categories.filter(val => val.id !== this.category.id);
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+        this.category = {};
+    }
+  
+    hideDialog() {
+        this.categoryDialog = false;
+        this.submitted = false;
+    }
+  
+  
+  
+    findIndexById(id: number): number {
+  
+        let index = -1;
+        for (let i = 0; i < this.categories.length; i++) {
+            if (this.categories[i].id === id) {
+                index = i;
+                break;
+            }
+        }
+  
+        return index;
+    }
+  
+    createId(): string {
+        let id = '';
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (let i = 0; i < 5; i++) {
+            id += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return id;
+    }
+  
+    onGlobalFilter(table: Table, event: Event) {
+        table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
+    }
   }
-
-  openNew() {
-      this.product = {};
-      this.submitted = false;
-      this.productDialog = true;
-  }
-
-  deleteSelectedProducts() {
-      this.deleteProductsDialog = true;
-     console.log(this.product);
-     
-    
-  }
-
-
-  deleteProduct(product: IProduct) {
-      this.deleteProductDialog = true;
-      this.productService.deleteProduct(product.id).subscribe(() =>{
-        // this.products = this.products.filter(item => item.id !== product.id)
-        this.product = { ...product };
-    })
-      
-  }
-
-  confirmDeleteSelected() {
-      this.deleteProductsDialog = false;
-      this.products = this.products.filter(val => !this.selectedProducts.includes(val));
-      this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
-      this.selectedProducts = [];
-  }
-
-  confirmDelete() {
-      this.deleteProductDialog = false;
-      this.products = this.products.filter(val => val.id !== this.product.id);
-      this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
-      this.product = {};
-  }
-
-  hideDialog() {
-      this.productDialog = false;
-      this.submitted = false;
-  }
-
-
-
-  findIndexById(id: number): number {
-
-      let index = -1;
-      for (let i = 0; i < this.products.length; i++) {
-          if (this.products[i].id === id) {
-              index = i;
-              break;
-          }
-      }
-
-      return index;
-  }
-
-  createId(): string {
-      let id = '';
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      for (let i = 0; i < 5; i++) {
-          id += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return id;
-  }
-
-  onGlobalFilter(table: Table, event: Event) {
-      table.filterGlobal((event.target as HTMLInputElement).value, 'contains');
-  }
-}

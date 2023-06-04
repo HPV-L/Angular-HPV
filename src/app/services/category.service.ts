@@ -28,11 +28,11 @@ export class CategoryService {
   }
   // sủa category
   editCategory(category:ICategory):Observable<ICategory>{
-    return this.http.post<ICategory>(`http://localhost:3000/category`,category)
+    return this.http.patch<ICategory>(`http://localhost:3000/category`,category)
   }
   // xoa
-  deleteCategory(id:number):Observable<ICategory>{
-    return this.http.get<ICategory>(`http://localhost:3000/category/${id}`)
+  deleteCategory(id:any):Observable<ICategory>{
+    return this.http.delete<ICategory>(`http://localhost:3000/category/${id}`)
   }
 
   getProductsByCategoryId(id:number):Observable<IProduct[]>{
