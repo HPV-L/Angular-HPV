@@ -58,21 +58,6 @@ export class AdminProductAddComponent {
     }
   }
  
-
-  // "id": 4,
-  // "code": "Ph21079",
-  // "name": "Sản phẩm 2",
-  // "description": "string",
-  // "importPrice":20000,
-  // "price": 40000,
-  // "quantity": 1,
-  // "status": 1,
-  // "category": "4",
-  // "image": "string",
-  // "date": "12-2-2003",
-  // "updateDay": "string"
-  
-
   // add
   onHandleSubmit(){
     if(this.productForm.valid){
