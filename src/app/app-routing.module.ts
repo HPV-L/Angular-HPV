@@ -7,12 +7,14 @@ import { AdminProductListComponent } from './pages/admin/admin-product-list/admi
 import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admin-product-edit.component';
 import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 
 const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
-    {path: "", component: HomePageComponent}
+    {path: "", component: HomePageComponent},
   ]},
+  {path: "checkout", component: CheckoutComponent},
   {path: "admin", component: AppLayoutComponent,children:[
     {path: "", redirectTo:"dashboard",pathMatch: "full"},
     {path: "dashboard", component: DashboardComponent},

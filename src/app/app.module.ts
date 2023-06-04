@@ -48,6 +48,9 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { NavComponent } from './component/nav/nav.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AdminProductListComponent,
     AdminProductAddComponent,
     AdminProductEditComponent,
-    HomePageComponent
+    HomePageComponent,
+    CheckoutComponent,
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
