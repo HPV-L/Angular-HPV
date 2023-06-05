@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { IProduct } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-admin-product-list',
@@ -11,6 +12,8 @@ import { ProductService } from 'src/app/services/product.service';
   providers: [MessageService]
 })
 export class AdminProductListComponent implements OnInit {
+
+    ProductCateID!:any  
 
   productDialog: boolean = false;
 
@@ -31,7 +34,15 @@ export class AdminProductListComponent implements OnInit {
 
   rowsPerPageOptions = [5, 10, 20];
 
-  constructor(private productService: ProductService, private messageService: MessageService) { }
+  constructor(
+    private productService: ProductService,
+    private CategoryService:CategoryService,
+    private messageService: MessageService
+    ) { 
+    this.CategoryService.getAllCategory().subscribe(data => {
+        this.ProductCateID = data
+      })
+  }
 
   ngOnInit() {
 
@@ -56,18 +67,14 @@ export class AdminProductListComponent implements OnInit {
   deleteSelectedProducts() {
       this.deleteProductsDialog = true;
      console.log(this.product);
-     
-    
   }
 
 
   deleteProduct(product: IProduct) {
       this.deleteProductDialog = true;
-      this.productService.deleteProduct(product.id).subscribe(() =>{
-        // this.products = this.products.filter(item => item.id !== product.id)
+      this.productService.deleteProduct(product.id).subscribe(() =>{   
         this.product = { ...product };
     })
-      
   }
 
   confirmDeleteSelected() {
@@ -89,8 +96,6 @@ export class AdminProductListComponent implements OnInit {
       this.submitted = false;
   }
 
-
-
   findIndexById(id: number): number {
 
       let index = -1;
@@ -100,7 +105,6 @@ export class AdminProductListComponent implements OnInit {
               break;
           }
       }
-
       return index;
   }
 
