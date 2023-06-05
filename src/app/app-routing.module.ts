@@ -7,15 +7,22 @@ import { AdminProductListComponent } from './pages/admin/product/admin-product-l
 import { AdminProductEditComponent } from './pages/admin/product/admin-product-edit/admin-product-edit.component';
 import { AdminProductAddComponent } from './pages/admin/product/admin-product-add/admin-product-add.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { CartDetailComponent } from './component/cart-detail/cart-detail.component';
+
 import { AdminCategoryListComponent } from './pages/admin/category/admin-category-list/admin-category-list.component';
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
 
 
+
 const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
-    {path: "", component: HomePageComponent}
+    {path: "", component: HomePageComponent},
   ]},
+  {path: "checkout", component: CheckoutComponent},
+  {path: "cart", component: CartDetailComponent},
   {path: "admin", component: AppLayoutComponent,children:[
     {path: "", redirectTo:"dashboard",pathMatch: "full"},
     {path: "dashboard", component: DashboardComponent},

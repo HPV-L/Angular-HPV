@@ -48,6 +48,12 @@ import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
+
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { NavComponent } from './component/nav/nav.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { CartDetailComponent } from './component/cart-detail/cart-detail.component';
+
 import { AdminCategoryListComponent } from './pages/admin/category/admin-category-list/admin-category-list.component';
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
@@ -69,9 +75,16 @@ import { AdminCategoryEditComponent } from './pages/admin/category/admin-categor
     AdminProductAddComponent,
     AdminProductEditComponent,
     HomePageComponent,
+
+    CheckoutComponent,
+    NavComponent,
+    FooterComponent,
+    CartDetailComponent
+
     AdminCategoryListComponent,
     AdminCategoryAddComponent,
     AdminCategoryEditComponent
+
   ],
   imports: [
     BrowserModule,

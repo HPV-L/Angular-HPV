@@ -1,0 +1,121 @@
+<div class="header3">routerLink
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-sm-2 col-xs-12">
+          <div class="logo3">
+            <a routerLink="/"
+              ><img src="images/home3/logo.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-10 col-xs-6">
+          <nav class="main-nav main-nav3">
+            <ul>
+              <li class="menu-item-has-children">
+                <a routerLink="/">home</a>
+              </li>
+              <li class="has-mega-menu">
+                <a routerLink="/">Shopping</a>
+              </li>
+              <li class="has-mega-menu">
+                <a routerLink="/">About</a>
+              </li>
+              <li><a routerLink="/">Contact</a></li>
+            </ul>
+            <a class="toggle-mobile-menu" routerLink="#"
+              ><i class="fa fa-bars" aria-hidden="true"></i
+            ></a>
+          </nav>
+        </div>
+        <div class="col-md-2 hidden-sm col-xs-6">
+          <ul class="list-cart-search3 list-inline">
+            <li>
+              <div class="my-account">
+                <a routerLink="#" class="my-account-link"
+                  ><i class="fa fa-user" aria-hidden="true"></i
+                ></a>
+                <ul class="list-account list-unstyled">
+                  <li>
+                    <a routerLink="#"
+                      ><i class="fa fa-user-plus"></i> Account Info</a
+                    >
+                  </li>
+                  <li>
+                    <a routerLink="#"><i class="fa fa-heart-o"></i> Wish List</a>
+                  </li>
+                  <li>
+                    <a routerLink="#"
+                      ><i class="fa fa-balance-scale"></i> Compare</a
+                    >
+                  </li>
+                  <li>
+                    <a routerLink="#"><i class="fa fa-unlock-alt"></i> Sign in</a>
+                  </li>
+                  <li>
+                    <a routerLink="#"><i class="fa fa-sign-in"></i> Checkout</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="search-hover">
+                <a routerLink="#" class="search-link"
+                  ><i class="fa fa-search" aria-hidden="true"></i
+                ></a>
+                <form class="search-form-hover">
+                  <input
+                    type="text"
+                    onblur="if (this.value=='') this.value = this.defaultValue"
+                    onfocus="if (this.value==this.defaultValue) this.value = ''"
+                    value="Search..."
+                  />
+                  <input type="submit" value="" />
+                </form>
+              </div>
+            </li>
+            <li>
+              <div class="mini-cart">
+                <a routerLink="#" class="mini-cart-link">
+                  <span class="mini-cart-icon"
+                    ><i aria-hidden="true" class="fa fa-opencart"></i
+                  ></span>
+                  <span class="mini-cart-number">0</span>
+                </a>
+                <div class="mini-cart-content">
+                  <h2 class="mini-cart-items">2 items</h2>
+                  <ul class="list-mini-cart-item">
+                    <li>
+                      <div class="mini-cart-thumb">
+                        <a class="cart-thumb" routerLink="#">
+                          <img alt="" src="images/photos/4.jpg" />
+                        </a>
+                      </div>
+                      <div class="mini-cart-info">
+                        <h3 class="mini-cart-title">
+                          <a routerLink="#">Birch Lane Merriweather</a>
+                        </h3>
+                        <div class="mini-cart-qty">
+                          <label>Qty:</label> <span>1</span>
+                        </div>
+                      </div>
+                      <div class="mini-cart-remove">
+                        <a class="remove-product" routerLink="#"></a>
+                        <span class="mini-cart-price">$49.99</span>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="mini-cart-total">
+                    <label>Subtotal</label> <span>$72.99</span>
+                  </div>
+                  <div class="mini-cart-button">
+                    <a class="mini-cart-edit" routerLink="cart">view cart</a>
+                    <a class="mini-cart-checkout" routerLink="checkout">checkout</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
