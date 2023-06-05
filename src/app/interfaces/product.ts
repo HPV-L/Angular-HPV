@@ -11,7 +11,7 @@ export interface IProduct {
     price?: number;
     quantity?: number;
     status?: number;
-    category?: string | number | object;
+    ProductCateID?: number;
     image?: string;
     rating?: number;
     date?:string;

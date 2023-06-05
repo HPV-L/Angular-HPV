@@ -4,15 +4,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
 import { DateTime } from 'luxon';
-
+import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
-  selector: 'app-admin-product-add',
-  templateUrl: './admin-product-add.component.html',
-  styleUrls: ['./admin-product-add.component.scss']
+  selector: 'app-admin-product-edit',
+  templateUrl: './admin-product-edit.component.html',
+  styleUrls: ['./admin-product-edit.component.scss']
 })
-export class AdminProductAddComponent {
+export class AdminProductEditComponent {
   selectedState: any = null;
+  productList!:IProduct
   @Input() imageUrl!: string;
   productForm = this.formBuilder.group({
     name: ["",[Validators.required]],
@@ -21,29 +23,54 @@ export class AdminProductAddComponent {
     price:[0,[Validators.required]],
     description:["",[Validators.required]],
     image:["",[Validators.required]],
-    category:[0,[Validators.required]],
+    ProductCateID:[0,[Validators.required]],
     code:["",[Validators.required]]
   })
   // time
   currentDateTime: string;
   // category
-  dropdownItems = [
-      { name: 'Option 1', cate: 1 },
-      { name: 'Option 2', cate: 2 },
-      { name: 'Option 3', cate: 3 }
-  ];
+ 
 
   constructor(
     private productService: ProductService,
+    private CategoryService:CategoryService,
     private formBuilder : FormBuilder,
+    private route: ActivatedRoute,
     private redirect: Router
   ){
     const vietnamTimeZone = 'Asia/Ho_Chi_Minh';
     const now = DateTime.now().setZone(vietnamTimeZone);
     this.currentDateTime = now.toFormat('yyyy-MM-dd HH:mm:ss');
     console.log(this.currentDateTime);
+    this.route.paramMap.subscribe( param =>{
+      const id = Number(param.get('id'))
+      console.log(id);
+      
+      this.productService.getProductById(id).subscribe( product =>{
+        console.log(product);
+        
+        this.productList = product
+        this.productForm.patchValue({
+          code:this.productList.code,        
+          name: this.productList.name,
+          quantity:this.productList.quantity,
+          importPrice:this.productList.importPrice,
+          price:this.productList.price,
+          description:this.productList.description,
+          image:this.productList.image,
+          // category:this.dropdownItems,
+          
+        })
+      })
+    })
     
+    this.CategoryService.getAllCategory().subscribe(data => {
+      this.ProductCateID = data
+    })
   }
+
+  ProductCateID!:any
+ 
 
   // hiện ảnh
   previewImageUrl!: string;
@@ -59,24 +86,12 @@ export class AdminProductAddComponent {
   }
  
 
-  // "id": 4,
-  // "code": "Ph21079",
-  // "name": "Sản phẩm 2",
-  // "description": "string",
-  // "importPrice":20000,
-  // "price": 40000,
-  // "quantity": 1,
-  // "status": 1,
-  // "category": "4",
-  // "image": "string",
-  // "date": "12-2-2003",
-  // "updateDay": "string"
-  
 
   // add
   onHandleSubmit(){
     if(this.productForm.valid){
       const product: IProduct ={    
+        id: this.productList.id,
         code:this.productForm.value.code || "",
         name:this.productForm.value.name || "",
         description:this.productForm.value.description || "",
@@ -84,13 +99,13 @@ export class AdminProductAddComponent {
         price:this.productForm.value.price || 0,              
         quantity:this.productForm.value.quantity || 0,
         status:1,
-        category: this.productForm.value.category || "",
+        ProductCateID:this.productForm.value.ProductCateID || 0,
         image:this.productForm.value.image || "",
-        date:this.currentDateTime,
-        updateDay: "Chưa chập nhật",
+        date:this.productList.date || "",
+        updateDay: this.currentDateTime,
 
       }
-      this.productService.addProduct(product).subscribe(product => {
+      this.productService.editProduct(product).subscribe(product => {
         console.log(product);
       alert("Thêm thành công")
         this.redirect.navigate(["/admin/product"])
@@ -98,5 +113,4 @@ export class AdminProductAddComponent {
       })
     }
   }
-  
 }

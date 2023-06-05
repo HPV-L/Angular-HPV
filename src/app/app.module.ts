@@ -39,18 +39,24 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule } from '@angular/forms';
 
-import { AdminProductListComponent } from './pages/admin/admin-product-list/admin-product-list.component';
-import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
-import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admin-product-edit.component';
+import { AdminProductListComponent } from './pages/admin/product/admin-product-list/admin-product-list.component';
+import { AdminProductAddComponent } from './pages/admin/product/admin-product-add/admin-product-add.component';
+import { AdminProductEditComponent } from './pages/admin/product/admin-product-edit/admin-product-edit.component';
 import { ChipsModule } from "primeng/chips";
 import { InputMaskModule } from "primeng/inputmask";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AdminCategoryListComponent } from './pages/admin/category/admin-category-list/admin-category-list.component';
+import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
+import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
+
+
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     BaseLayoutComponent,
     BannerComponent,
@@ -62,7 +68,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AdminProductListComponent,
     AdminProductAddComponent,
     AdminProductEditComponent,
-    HomePageComponent
+    HomePageComponent,
+    AdminCategoryListComponent,
+    AdminCategoryAddComponent,
+    AdminCategoryEditComponent
   ],
   imports: [
     BrowserModule,
@@ -95,9 +104,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     ChipsModule ,
     InputMaskModule,
     CascadeSelectModule,
-    MultiSelectModule
+    MultiSelectModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
