@@ -51,6 +51,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { NavComponent } from './component/nav/nav.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { CartDetailComponent } from './component/cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { FooterComponent } from './component/footer/footer.component';
     HomePageComponent,
     CheckoutComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    CartDetailComponent
   ],
   imports: [
     BrowserModule,

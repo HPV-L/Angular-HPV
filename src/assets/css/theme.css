@@ -345,6 +345,7 @@ h1,h2,h3,h4,h5,h6{
     display: inline-block;
     height: 36px;
     line-height: 36px;
+    text-decoration: none;
     text-align: center;
     text-transform: capitalize;
     transition: all 0.3s ease-out 0s;
@@ -355,7 +356,8 @@ h1,h2,h3,h4,h5,h6{
   margin-right: 5px;
 }
 .mini-cart-button a:hover {
-  background: #ff3e3e none repeat scroll 0 0;
+  text-decoration: none;
+  color: white;
 }
 .remove-product:hover {
   background-color: #e5e5e5;
