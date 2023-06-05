@@ -2300,6 +2300,7 @@ img.lazyloaded {
   transition: opacity 0.5s; }
 
 /*  2.2. Buttons  */
+
 .btn {
   padding: 10px 22px;
   font-size: 11px;
@@ -17783,7 +17784,7 @@ body:not(.zoom-off) .category-with-bg:hover .category-with-bg-image > img {
       padding-right: 6px; } }
   @media screen and (min-width: 768px) {
     .cart-table-total {
-      background-color: #fbfbfb;
+      background-color: #535446;
       padding: 7px 7px 0; } }
   .cart-table-total [class*="col"] > * {
     margin-bottom: 7px;

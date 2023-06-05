@@ -8,6 +8,7 @@ import { AdminProductEditComponent } from './pages/admin/admin-product-edit/admi
 import { AdminProductAddComponent } from './pages/admin/admin-product-add/admin-product-add.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { CartDetailComponent } from './component/cart-detail/cart-detail.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: "", component: HomePageComponent},
   ]},
   {path: "checkout", component: CheckoutComponent},
+  {path: "cart", component: CartDetailComponent},
   {path: "admin", component: AppLayoutComponent,children:[
     {path: "", redirectTo:"dashboard",pathMatch: "full"},
     {path: "dashboard", component: DashboardComponent},
