@@ -1,59 +1,51 @@
-<div class="page-content">
+<app-nav/>
+
+<div class="shopping"><h1 class="text-center">Shopping Cart</h1></div>
+
+<div class="page-content" *ngIf="carts.length">
     <div class="holder mt-0">
         <div class="container">
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a routerLink="/">Home</a></li>
                 <li><span>Cart</span></li>
             </ul>
         </div>
     </div>
     <div class="holder mt-0">
-        <div class="container">
-            <h1 class="text-center">Shopping Cart</h1>
+        <div class="container">          
             <div class="row">
                 <div class="col-md-8">
                     <div class="cart-table">
-                        <div class="cart-table-prd">
-                            <div class="cart-table-prd-image"><a href="#"><img src="../../../assets/images/lighting4.jpg" alt=""></a></div>
+                        <!-- sản phẩm -->
+
+                        <div class="cart-table-prd" *ngFor="let cart of carts ; let i = index">
+                            <div class="cart-table-prd-image"><a routerLink="#"><img src="{{cart.img}}" alt=""></a></div>
                             <div class="cart-table-prd-name">
-                                <h5><a href="#">canverse</a></h5>
-                                <h2><a href="#">Checkered shirt</a></h2>
+                                <h5><a routerLink="#">canverse</a></h5>
+                                <h2><a routerLink="#">{{cart.name}}</a></h2>
                             </div>
-                            <div class="cart-table-prd-qty"><span>qty:</span> <b>1</b></div>
-                            <div class="cart-table-prd-price"><span>price:</span> <b>$ 75.00</b></div>
-                            <div class="cart-table-prd-action"><a href="#" class="icon-heart"></a> <a href="#" class="icon-pencil"></a> <a href="#" class="icon-cross"></a></div>
-                        </div>
-                        <div class="cart-table-prd">
-                            <div class="cart-table-prd-image"><a href="#"><img src="../../../assets/images/lighting4.jpg" alt=""></a></div>
-                            <div class="cart-table-prd-name">
-                                <h5><a href="#">canverse</a></h5>
-                                <h2><a href="#">Long top with print</a></h2>
+                            <div class="cart-table-prd-qty">
+                                <button (click)="giam(i,cart.quantity)">-</button>
+                                    <input class="input-number" type="number" [value]="cart.quantity" (change)="updateQuantity(i, $event)">
+                                <button (click)="tang(i,cart.quantity)">+</button>
                             </div>
-                            <div class="cart-table-prd-qty"><span>qty:</span> <b>1</b></div>
-                            <div class="cart-table-prd-price"><span>price:</span> <b>$ 20.00</b></div>
-                            <div class="cart-table-prd-action"><a href="#" class="icon-heart"></a> <a href="#" class="icon-pencil"></a> <a href="#" class="icon-cross"></a></div>
+                            <div class="cart-table-prd-price"><span>price:</span> <b>123</b></div>
+                            <div class="cart-table-prd-action"><a routerLink="#" class="icon-heart"></a>  <a  (click)="removeCart(i)" class="icon-cross"></a></div>
                         </div>
-                        <div class="cart-table-prd">
-                            <div class="cart-table-prd-image"><a href="#"><img src="../../../assets/images/lighting4.jpg" alt=""></a></div>
-                            <div class="cart-table-prd-name">
-                                <h5><a href="#">saucany</a></h5>
-                                <h2><a href="#">Knitted sweater</a></h2>
-                            </div>
-                            <div class="cart-table-prd-qty"><span>qty:</span> <b>1</b></div>
-                            <div class="cart-table-prd-price"><span>price:</span> <b>$ 199.00</b></div>
-                            <div class="cart-table-prd-action"><a href="#" class="icon-heart"></a> <a href="#" class="icon-pencil"></a> <a href="#" class="icon-cross"></a></div>
-                        </div>
+                        
+                        <!-- xóa tất cả sản phẩm , mua tiếp -->
                         <div class="cart-table-total">
                             <div class="row">
-                                <div class="col-sm"><a href="#" class="btn btn--alt"><i class="icon-cross"></i><span>clear shopping cart</span></a> <a href="#" class="btn btn--grey"><i class="icon-repeat"></i><span>update cart</span></a></div>
-                                <div class="col-sm-auto"><a href="#" class="btn"><i class="icon-angle-left"></i><span>continue shopping</span></a></div>
+                                <div class="col-sm"><button (click)="removeCartAll()" class="btn btn--alt"><i class="icon-cross"></i><span>Clear shopping cart</span></button> <a routerLink="#" class="btn btn--grey"><i class="icon-repeat"></i><span>update cart</span></a></div>
+                                <div class="col-sm-auto"><a routerLink="/product" class="btn"><i class="icon-angle-left"></i><span>Continue shopping</span></a></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="sidebar-block">
-                        <div class="card-total text-uppercase">Subtotal <span class="card-total-price">$ 294.00</span></div>
+                    <div class="sidebar-block">                      
+                        <div class="card-total text-uppercase">Subtotal :<span class="card-total-price">$ {{totalPrice}}</span></div>
+                        <div class="card-total text-uppercase">Quantity :<span class="card-total-price">{{totalQuantity}}</span></div>
                         <a routerLink="../checkout"><button class="btn btn-warning btn--full btn--lg">proceed to checkout</button></a>
                     </div>
                     <div class="sidebar-block open">
@@ -114,4 +106,10 @@
         </div>
     </div>
 </div>
+
+<div class="errorcart"  *ngIf="carts.length == 0">
+    <h1 class="warning-error d-flex justify-content-center">There are no products in the cart !!!</h1>
+    <a class=" mt-3 d-flex justify-content-center p-0" routerLink="/product" role="button">back to the store to buy</a>
+</div>
+
 <app-footer/>
