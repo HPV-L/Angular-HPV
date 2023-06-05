@@ -79,7 +79,7 @@ import { AdminCategoryEditComponent } from './pages/admin/category/admin-categor
     CheckoutComponent,
     NavComponent,
     FooterComponent,
-    CartDetailComponent
+    CartDetailComponent,
 
     AdminCategoryListComponent,
     AdminCategoryAddComponent,
