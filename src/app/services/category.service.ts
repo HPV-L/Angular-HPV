@@ -19,8 +19,8 @@ export class CategoryService {
     return this.http.post<ICategory>(`http://localhost:3000/category`,category)
   }
   //  lấy 1
-  getCategory(category:ICategory):Observable<ICategory>{
-    return this.http.get<ICategory>(`http://localhost:3000/category/${category.id}`)
+  getCategory(id:Number):Observable<ICategory>{
+    return this.http.get<ICategory>(`http://localhost:3000/category/${id}`)
   }
   // lấy tất cả
   getAllCategory():Observable<ICategory[]>{
@@ -35,9 +35,12 @@ export class CategoryService {
     return this.http.delete<ICategory>(`http://localhost:3000/category/${id}`)
   }
 
-  getProductsByCategoryId(id:number):Observable<IProduct[]>{
-    const url = `http://localhost:3000/products?category=${id}`;
+  getProductsByCategoryId(id:number | undefined):Observable<IProduct[]>{
+    const url = `http://localhost:3000/products?ProductCateID=${id}`;
     return this.http.get<IProduct[]>(url)
   }
 
+  deleteProduct(id :any): Observable<IProduct>{
+    return this.http.delete<IProduct>(`http://localhost:3000/products/${id}`)
+  }
 }

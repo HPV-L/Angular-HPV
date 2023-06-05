@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { ICategory } from 'src/app/interfaces/category';
 import { CategoryService } from 'src/app/services/category.service';
+import { IProduct } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-admin-category-list',
@@ -11,6 +12,8 @@ import { CategoryService } from 'src/app/services/category.service';
   providers: [MessageService]
 })
 export class AdminCategoryListComponent implements OnInit {
+
+    productListCateId: IProduct[] = [];
 
     categoryDialog: boolean = false;
   
@@ -36,13 +39,7 @@ export class AdminCategoryListComponent implements OnInit {
     ngOnInit() {
   
         this.categoryService.getAllCategory().subscribe(data => this.categories = data);
-        this.cols = [
-            { field: 'name', header: 'Name' },
-            { field: 'price', header: 'Price' },
-            { field: 'category', header: 'Category' },
-            { field: 'quantity', header: 'Quantity' },
-            { field: 'date', header: 'Date' }
-        ];
+      
     }
   
     openNew() {
@@ -57,10 +54,22 @@ export class AdminCategoryListComponent implements OnInit {
     }
   
   
-    deleteProduct(category: ICategory) {
+    deleteProduct(ids :number,category: ICategory  ) {
         this.deleteCategoryDialog = true;
+       console.log(ids);
+       
+       
+        if (this.categories.length > 0) {         
+            this.categoryService.getProductsByCategoryId(ids).subscribe(products => {
+               this.productListCateId = products;
+            //    console.log(products);
+               
+               this.productListCateId.forEach(product => {
+                 this.categoryService.deleteProduct(product.id).subscribe();
+               });       
+             });
+        }
         this.categoryService.deleteCategory(category.id).subscribe(() =>{
-          // this.products = this.products.filter(item => item.id !== product.id)
           this.category = { ...category };
       })
         
@@ -86,8 +95,6 @@ export class AdminCategoryListComponent implements OnInit {
         this.submitted = false;
     }
   
-  
-  
     findIndexById(id: number): number {
   
         let index = -1;
@@ -97,7 +104,6 @@ export class AdminCategoryListComponent implements OnInit {
                 break;
             }
         }
-  
         return index;
     }
   

@@ -48,7 +48,9 @@
   
           <div class="field col-12 md:col-6">
             <label htmlFor="state">Danh mục</label>
-            <p-dropdown [options]="dropdownItems" optionLabel="name" formControlName="category"></p-dropdown>
+            <select class="form-select" rows="4" formControlName="ProductCateID" aria-label=".form-select-lg example">
+              <option rows="4" *ngFor="let catePro of ProductCateID" value={{catePro.id}}>{{catePro.name}}</option>
+            </select>
           </div>
   
           <div class="field col-12 md:col-3">

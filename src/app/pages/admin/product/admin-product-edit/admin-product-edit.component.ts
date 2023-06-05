@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
 import { DateTime } from 'luxon';
 import { ActivatedRoute } from '@angular/router';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-admin-product-edit',
@@ -22,20 +23,17 @@ export class AdminProductEditComponent {
     price:[0,[Validators.required]],
     description:["",[Validators.required]],
     image:["",[Validators.required]],
-    category:[0,[Validators.required]],
+    ProductCateID:[0,[Validators.required]],
     code:["",[Validators.required]]
   })
   // time
   currentDateTime: string;
   // category
-  dropdownItems = [
-      { name: 'Option 1', cate: 1 },
-      { name: 'Option 2', cate: 2 },
-      { name: 'Option 3', cate: 3 }
-  ];
+ 
 
   constructor(
     private productService: ProductService,
+    private CategoryService:CategoryService,
     private formBuilder : FormBuilder,
     private route: ActivatedRoute,
     private redirect: Router
@@ -65,7 +63,14 @@ export class AdminProductEditComponent {
         })
       })
     })
+    
+    this.CategoryService.getAllCategory().subscribe(data => {
+      this.ProductCateID = data
+    })
   }
+
+  ProductCateID!:any
+ 
 
   // hiện ảnh
   previewImageUrl!: string;
@@ -81,19 +86,6 @@ export class AdminProductEditComponent {
   }
  
 
-  // "id": 4,
-  // "code": "Ph21079",
-  // "name": "Sản phẩm 2",
-  // "description": "string",
-  // "importPrice":20000,
-  // "price": 40000,
-  // "quantity": 1,
-  // "status": 1,
-  // "category": "4",
-  // "image": "string",
-  // "date": "12-2-2003",
-  // "updateDay": "string"
-  
 
   // add
   onHandleSubmit(){
@@ -107,7 +99,7 @@ export class AdminProductEditComponent {
         price:this.productForm.value.price || 0,              
         quantity:this.productForm.value.quantity || 0,
         status:1,
-        category:this.productForm.value.category || 'Default Category',
+        ProductCateID:this.productForm.value.ProductCateID || 0,
         image:this.productForm.value.image || "",
         date:this.productList.date || "",
         updateDay: this.currentDateTime,

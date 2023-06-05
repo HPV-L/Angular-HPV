@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
 import { DateTime } from 'luxon';
+import { CategoryService } from 'src/app/services/category.service';
 
 
 @Component({
@@ -21,20 +22,17 @@ export class AdminProductAddComponent {
     price:[0,[Validators.required]],
     description:["",[Validators.required]],
     image:["",[Validators.required]],
-    category:[0,[Validators.required]],
+    ProductCateID:[0,[Validators.required]],
     code:["",[Validators.required]]
   })
   // time
   currentDateTime: string;
   // category
-  dropdownItems = [
-      { name: 'Option 1', cate: 1 },
-      { name: 'Option 2', cate: 2 },
-      { name: 'Option 3', cate: 3 }
-  ];
+
 
   constructor(
     private productService: ProductService,
+    private CategoryService:CategoryService,
     private formBuilder : FormBuilder,
     private redirect: Router
   ){
@@ -42,8 +40,15 @@ export class AdminProductAddComponent {
     const now = DateTime.now().setZone(vietnamTimeZone);
     this.currentDateTime = now.toFormat('yyyy-MM-dd HH:mm:ss');
     console.log(this.currentDateTime);
-    
+
+    this.CategoryService.getAllCategory().subscribe(data => {
+      console.log(data);
+      
+      this.ProductCateID = data
+    })
   }
+  ProductCateID!:any
+ 
 
   // hiện ảnh
   previewImageUrl!: string;
@@ -69,7 +74,7 @@ export class AdminProductAddComponent {
         price:this.productForm.value.price || 0,              
         quantity:this.productForm.value.quantity || 0,
         status:1,
-        category: this.productForm.value.category || "",
+        ProductCateID: this.productForm.value.ProductCateID || 0,
         image:this.productForm.value.image || "",
         date:this.currentDateTime,
         updateDay: "Chưa chập nhật",

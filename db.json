@@ -1,66 +1,26 @@
 {
   "products": [
     {
-      "code": "345678",
-      "name": "sản phẩm 2 update",
-      "description": "aeszfgdxfcghjvgcfdsazfxgvhbj update",
-      "importPrice": "2222",
-      "price": "213123123",
-      "quantity": "22",
+      "code": "sadasd",
+      "name": "dfsdfs",
+      "description": "asdsdf",
+      "importPrice": "12312",
+      "price": "123",
+      "quantity": "213",
       "status": 1,
-      "category": {
-        "name": "Option 2",
-        "cate": 2
-      },
-      "image": "C:\\fakepath\\WIN_20230317_14_36_27_Pro - Copy.jpg",
-      "date": "2023-05-31 01:29:08",
-      "updateDay": "2023-05-31 15:43:01",
-      "id": 2
-    },
-    {
-      "code": "dfsghjj",
-      "name": "test ảnh",
-      "description": "243567234567",
-      "importPrice": "435678",
-      "price": "43567",
-      "quantity": "43567",
-      "status": 1,
-      "category": {
-        "name": "Option 2",
-        "cate": 2
-      },
-      "image": "C:\\fakepath\\banner.jpg",
-      "date": "2023-05-31 02:43:33",
+      "ProductCateID": "1",
+      "image": "C:\\fakepath\\1040201_568381579874545_1575159789_o.jpg",
+      "date": "2023-06-05 22:23:59",
       "updateDay": "Chưa chập nhật",
-      "id": 4
+      "id": 1
     }
   ],
   "category": [
     {
-      "code": "345678",
-      "name": "adsfxcfvb",
-      "date": "2023-06-05 00:26:44",
+      "name": "Danh mục 1",
+      "date": "2023-06-05 02:20:15",
       "updateDay": "Chưa chập nhật",
       "id": 1
-    },
-    {
-      "name": "ưexdghbjn",
-      "date": "2023-06-05 00:53:54",
-      "updateDay": "Chưa chập nhật",
-      "id": 2
-    },
-    {
-      "code": "dfsghjj",
-      "name": "Phuong ngu oc bo",
-      "date": "2023-06-05 01:30:57",
-      "updateDay": "Chưa chập nhật",
-      "id": 3
-    },
-    {
-      "name": "Phuong ngu oc bo an cut",
-      "date": "2023-06-05 01:51:08",
-      "updateDay": "Chưa chập nhật",
-      "id": 4
     }
   ]
 }
