@@ -22,6 +22,7 @@ export class CartDetailComponent {
 
   ngOnInit():void {
     this.carts= this.CartService.getCart()
+
   }
   subtotal(cart:any) {
     return cart.quantity * cart.price
@@ -73,6 +74,7 @@ export class CartDetailComponent {
     this.carts=[]
    }
   }
+
 
 
 }

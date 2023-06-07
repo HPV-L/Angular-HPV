@@ -16,109 +16,147 @@
 
 
 <div class="page-content" *ngIf="carts.length">
-    <div class="holder mt-0">
+    <div class="cart">
         <div class="container">
-            <ul class="breadcrumbs">
-                
-                <li><span>Cart</span></li>
-            </ul>
-        </div>
-    </div>
-    <div class="holder mt-0">
-        <div class="container">          
             <div class="row">
-                <div class="col-md-8">
-                    <div class="cart-table">
-                        <!-- sản phẩm -->
+                <div class="col-lg-9">
+                    <table class="table table-cart table-mobile">
+                        <thead>
+                            <tr>
+                                
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-                        <div class="cart-table-prd" *ngFor="let cart of carts ; let i = index">
-                            <div class="cart-table-prd-image"><a routerLink="#"><img src="{{cart.img}}" alt=""></a></div>
-                            <div class="cart-table-prd-name">
-                                <h5><a routerLink="#">canverse</a></h5>
-                                <h2><a routerLink="#">{{cart.name}}</a></h2>
-                            </div>
-                            <div class="cart-table-prd-qty">
-                                <button (click)="giam(i,cart.quantity)">-</button>
-                                    <input class="input-number" type="number" [value]="cart.quantity" (change)="updateQuantity(i, $event)">
-                                <button (click)="tang(i,cart.quantity)">+</button>
-                            </div>
-                            <div class="cart-table-prd-price"><span>price:</span> <b>123</b></div>
-                            <div class="cart-table-prd-action"><a routerLink="#" class="icon-heart"></a>  <a  (click)="removeCart(i)" class="icon-cross"></a></div>
-                        </div>
-                        
-                        <!-- xóa tất cả sản phẩm , mua tiếp -->
-                        <div class="cart-table-total">
-                            <div class="row">
-                                <div class="col-sm"><button (click)="removeCartAll()" class="btn btn--alt"><i class="icon-cross"></i><span>Clear shopping cart</span></button> <a routerLink="#" class="btn btn--grey"><i class="icon-repeat"></i><span>update cart</span></a></div>
-                                <div class="col-sm-auto"><a routerLink="/product" class="btn"><i class="icon-angle-left"></i><span>Continue shopping</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="sidebar-block">                      
-                        <div class="card-total text-uppercase">Subtotal :<span class="card-total-price">$ {{totalPrice}}</span></div>
-                        <div class="card-total text-uppercase">Quantity :<span class="card-total-price">{{totalQuantity}}</span></div>
-                        <a routerLink="../checkout"><button class="btn btn-warning btn--full btn--lg">proceed to checkout</button></a>
-                    </div>
-                    <div class="sidebar-block open">
-                        <div class="sidebar-block_title"><span>APPLY PROMOCODE</span>
-                            <div class="toggle-arrow"></div>
-                        </div>
-                        <div class="sidebar-block_content"><label class="text-uppercase">promo/student code:</label>
-                            <div class="form-flex">
-                                <div class="form-group"><input type="text" class="form-control"></div><button type="submit" class="btn btn-outline-info btn--form btn--alt">Apply</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-block collapsed">
-                        <div class="sidebar-block_title"><span>SHIPPING ESTIMATES</span>
-                            <div class="toggle-arrow"></div>
-                        </div>
-                        <div class="sidebar-block_content"><label class="text-uppercase">Country:</label>
-                            <div class="form-group select-wrapper"><select class="form-control">
-                                    <option value="United States">United States</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="China">China</option>
-                                    <option value="India">India</option>
-                                    <option value="Italy">Italy</option>
-                                    <option value="Mexico">Mexico</option>
-                                </select></div><label class="text-uppercase">State:</label>
-                            <div class="form-group select-wrapper"><select class="form-control">
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <option value="AR">Arkansas</option>
-                                    <option value="CA">California</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="CT">Connecticut</option>
-                                    <option value="DE">Delaware</option>
-                                    <option value="DC">District Of Columbia</option>
-                                    <option value="FL">Florida</option>
-                                    <option value="GA">Georgia</option>
-                                    <option value="HI">Hawaii</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="IN">Indiana</option>
-                                    <option value="IA">Iowa</option>
-                                    <option value="KS">Kansas</option>
-                                    <option value="KY">Kentucky</option>
-                                    <option value="LA">Louisiana</option>
-                                </select></div><label class="text-uppercase">zip/postal code:</label>
-                            <div class="form-group"><input type="text" class="form-control"></div>
-                        </div>
-                    </div>
-                    <div class="sidebar-block collapsed">
-                        <div class="sidebar-block_title"><span>ORDER COMMENT</span>
-                            <div class="toggle-arrow"></div>
-                        </div>
-                        <div class="sidebar-block_content"><label class="text-uppercase">Write a comment here:</label> <textarea class="form-control textarea--height-200"></textarea></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                        <tbody >
+
+                            <tr *ngFor="let cart of carts ; let i = index" >
+                                
+                                <td class="product-col">
+                                    <div class="product">
+                                        <figure class="product-media">
+                                            <a href="#">
+                                                <img src="{{cart.img}}" alt="Product image">
+                                            </a>
+                                        </figure>
+
+                                        <h3 class="product-title">
+                                            <a href="#">{{cart.name}}</a>
+                                        </h3><!-- End .product-title -->
+                                    </div><!-- End .product -->
+                                </td>
+                                <td class="price-col">${{cart.price}}</td>
+                                <td class="quantity-col">
+                                    <div class="cart-product-quantity quantity">
+                                        
+                                        <input type="number" [value]="cart.quantity" (change)="updateQuantity(i, $event)" class="form-control " value="1" min="1" max="99" step="1"  required>
+                                      
+
+
+                                        <div class="quantity-nav">
+                                            <div class="quantity-button quantity-up"  (click)="tang(i,cart.quantity)">+</div>
+                                            <div class="quantity-button quantity-down" (click)="giam(i,cart.quantity)">-</div>
+                                        </div>
+
+
+                                    </div><!-- End .cart-product-quantity -->                                 
+                                </td>
+                                <td class="total-col">${{subtotal(cart)}}</td>
+                                <td class="remove-col"><button  class="btn-remove"><i class="icon-close" (click)="removeCart(i)"></i></button></td>
+                            </tr>
+
+                        </tbody>
+                    </table><!-- End .table table-wishlist -->
+
+                    <div class="cart-bottom">
+                        <div class="cart-discount">
+                            <form action="#">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" required placeholder="coupon code">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
+                                    </div><!-- .End .input-group-append -->
+                                </div><!-- End .input-group -->
+                            </form>
+                        </div><!-- End .cart-discount -->
+
+                        <button (click)="removeCartAll()" class="btn btn-outline-dark-2" ><span>CLEAR ALL</span><i class="icon-refresh"></i></button>
+                        <a href="cart" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+                       
+                     
+                    </div><!-- End .cart-bottom -->
+                </div><!-- End .col-lg-9 -->
+                <aside class="col-lg-3">
+                    <div class="summary summary-cart">
+                        <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
+
+                        <table class="table table-summary">
+                            <tbody>
+                                <tr class="summary-subtotal">
+                                    <td>Quantity:</td>
+                                    <td>{{totalQuantity}}</td>
+                                    
+                                </tr><!-- End .summary-subtotal -->
+                                <tr class="summary-shipping">
+                                    <td>Shipping:</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+
+                                <tr class="summary-shipping-row">
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
+                                            <label class="custom-control-label" for="free-shipping">Free Shipping</label>
+                                        </div><!-- End .custom-control -->
+                                    </td>
+                                    <td>$0.00</td>
+                                </tr><!-- End .summary-shipping-row -->
+
+                                <tr class="summary-shipping-row">
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
+                                            <label class="custom-control-label" for="standart-shipping">Standart:</label>
+                                        </div><!-- End .custom-control -->
+                                    </td>
+                                    <td>$10.00</td>
+                                </tr><!-- End .summary-shipping-row -->
+
+                                <tr class="summary-shipping-row">
+                                    <td>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
+                                            <label class="custom-control-label" for="express-shipping">Express:</label>
+                                        </div><!-- End .custom-control -->
+                                    </td>
+                                    <td>$20.00</td>
+                                </tr><!-- End .summary-shipping-row -->
+
+                                <tr class="summary-shipping-estimate">
+                                    <td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
+                                    <td>&nbsp;</td>
+                                </tr><!-- End .summary-shipping-estimate -->
+
+                                <tr class="summary-total">
+                                    <td>Total:</td>
+                                    <td>${{totalPrice}}</td>
+                                </tr><!-- End .summary-total -->
+                            </tbody>
+                        </table><!-- End .table table-summary -->
+
+                        <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
+                    </div><!-- End .summary -->
+
+                    <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
+                </aside><!-- End .col-lg-3 -->
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+    </div><!-- End .cart -->
+</div><!-- End .page-content -->
 
 <div class="errorcart"  *ngIf="carts.length == 0">
     <h1 class="warning-error d-flex justify-content-center">There are no products in the cart !!!</h1>

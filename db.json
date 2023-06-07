@@ -1,11 +1,140 @@
 {
-  "products": [],
-  "category": [
+  "products": [
     {
-      "name": "Danh mục 1",
-      "date": "2023-06-05 02:20:15",
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
       "id": 1
+    },
+    {
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
+      "updateDay": "Chưa chập nhật",
+      "id": 2
+    },
+    {
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
+      "updateDay": "Chưa chập nhật",
+      "id": 3
+    } , 
+    {
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
+      "updateDay": "Chưa chập nhật",
+      "id": 4
+    },
+    {
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
+      "updateDay": "Chưa chập nhật",
+      "id": 5
+    },
+    {
+      "code": "39638",
+      "name": "Brown paperbag waist pencil skirt",
+      "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
+      "importPrice": "10",
+      "price": "60",
+      "quantity": "60",
+      "status": 1,
+      "ProductCateID": "1",
+      "image": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
+      "date": "2023-06-07 23:03:54",
+      "updateDay": "Chưa chập nhật",
+      "id": 6
+    }
+
+
+  ],
+  "category": [
+    {
+      "name": "Women",
+      "date": "2023-06-07 23:02:47",
+      "updateDay": "Chưa chập nhật",
+      "id": 1
+    },
+    {
+      "name": "Dresses",
+      "date": "2023-06-07 23:02:59",
+      "updateDay": "Chưa chập nhật",
+      "id": 2
+    },
+    {
+      "name": "Jackets",
+      "date": "2023-06-07 23:03:08",
+      "updateDay": "Chưa chập nhật",
+      "id": 3
+    },
+    {
+      "name": "Jeans",
+      "date": "2023-06-07 23:03:15",
+      "updateDay": "Chưa chập nhật",
+      "id": 4
+    },
+    {
+      "name": "Shoes",
+      "date": "2023-06-07 23:03:26",
+      "updateDay": "Chưa chập nhật",
+      "id": 5
+    },
+    {
+      "name": "Bags",
+      "date": "2023-06-07 23:03:34",
+      "updateDay": "Chưa chập nhật",
+      "id": 6
+    },
+    {
+      "name": "Shoes",
+      "date": "2023-06-07 23:03:41",
+      "updateDay": "Chưa chập nhật",
+      "id": 7
+    },
+    {
+      "name": "Jumpers",
+      "date": "2023-06-07 23:03:48",
+      "updateDay": "Chưa chập nhật",
+      "id": 8
     }
   ]
 }
