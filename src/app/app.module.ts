@@ -12,14 +12,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
-import { BannerComponent } from './component/banner/banner.component';
+import { BannerComponent } from './component/client/banner/banner.component';
 import { AppLayoutModule } from './layout/admin-layout/app.layout.module';
 
-import { CategoriesComponent } from './component/categories/categories.component';
-import { ListproductComponent } from './component/listproduct/listproduct.component';
-import { SuperDealComponent } from './component/super-deal/super-deal.component';
-import { MarketPlaceComponent } from './component/market-place/market-place.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { CategoriesComponent } from './component/home/categories/categories.component';
+import { ListproductComponent } from './component/home/listproduct/listproduct.component';
+import { SuperDealComponent } from './component/home/super-deal/super-deal.component';
+import { MarketPlaceComponent } from './component/home/market-place/market-place.component';
+import { DashboardComponent } from './component/admin/dashboard/dashboard.component';
 
 // PrimeNG
 import { CalendarModule } from 'primeng/calendar';
@@ -49,14 +49,24 @@ import { MultiSelectModule } from "primeng/multiselect";
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
-import { CheckoutComponent } from './component/checkout/checkout.component';
-import { NavComponent } from './component/nav/nav.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { CartDetailComponent } from './component/cart-detail/cart-detail.component';
+import { CheckoutComponent } from './component/client/checkout/checkout.component';
+import { NavComponent } from './component/client/nav/nav.component';
+import { FooterComponent } from './component/client/footer/footer.component';
+import { CartDetailComponent } from './component/client/cart-detail/cart-detail.component';
 
 import { AdminCategoryListComponent } from './pages/admin/category/admin-category-list/admin-category-list.component';
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
+import { HomeBlogComponent } from './component/home/home-blog/home-blog.component';
+import { ShopPageComponent } from './pages/shop-page/shop-page.component';
+import { NavShopComponent } from './component/shop/nav-shop/nav-shop.component';
+import { ToolBoxComponent } from './component/shop/tool-box/tool-box.component';
+import { ProductShopComponent } from './component/shop/product-shop/product-shop.component';
+import { NavigationShopComponent } from './component/shop/navigation-shop/navigation-shop.component';
+import { AsideShopComponent } from './component/shop/aside-shop/aside-shop.component';
+import { SigninComponent } from './component/client/signin/signin.component';
+import { SignupComponent } from './component/client/signup/signup.component';
+
 
 
 
@@ -83,7 +93,17 @@ import { AdminCategoryEditComponent } from './pages/admin/category/admin-categor
 
     AdminCategoryListComponent,
     AdminCategoryAddComponent,
-    AdminCategoryEditComponent
+    AdminCategoryEditComponent,
+    HomeBlogComponent,
+    ShopPageComponent,
+    NavShopComponent,
+    ToolBoxComponent,
+    ProductShopComponent,
+    NavigationShopComponent,
+    AsideShopComponent,
+    SigninComponent,
+    SignupComponent
+  
 
   ],
   imports: [

@@ -1,20 +1,5 @@
 {
-  "products": [
-    {
-      "code": "sadasd",
-      "name": "dfsdfs",
-      "description": "asdsdf",
-      "importPrice": "12312",
-      "price": "123",
-      "quantity": "213",
-      "status": 1,
-      "ProductCateID": "1",
-      "image": "C:\\fakepath\\1040201_568381579874545_1575159789_o.jpg",
-      "date": "2023-06-05 22:23:59",
-      "updateDay": "Chưa chập nhật",
-      "id": 1
-    }
-  ],
+  "products": [],
   "category": [
     {
       "name": "Danh mục 1",
