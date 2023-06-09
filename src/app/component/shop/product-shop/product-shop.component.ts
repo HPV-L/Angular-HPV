@@ -18,10 +18,9 @@ constructor (
   private CartService: CartService
   ){
   this.productService.getAllProducts().subscribe((data:any) =>{
-    console.log(data)
+    // console.log(data)
     
     this.listProduct = data.data
-
 
   })
 }
@@ -29,15 +28,17 @@ constructor (
 carts :any[] = this.CartService.getCart();
 
 onAddCart(product: IProduct){
+  console.log('product:', product);
+  
  
   let index = this.carts.findIndex((item) =>{
-    return item.id == product.id
+    return item._id == product._id
   })
   if(index>=0){
     this.carts[index].quantity += 1
   }else{
     let cartItem:any ={
-      id:product.id,
+      id:product._id,
       name:product.name,
       img:product.thumbnail,
       price:product.price,

@@ -27,7 +27,7 @@ removetUsers(id:number): Observable<IUser[]>{
   return this.http.delete<IUser[]>(`http://localhost:8080/api/users/${id}`)
 }
 editUser(user:IUser):Observable<IUser>{
-  return this.http.patch<IUser>(`http://localhost:8080/api/users${user.id}`,user)
+  return this.http.patch<IUser>(`http://localhost:8080/api/users${user._id}`,user)
 }
 
 

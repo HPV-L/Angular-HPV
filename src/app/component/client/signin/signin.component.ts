@@ -35,6 +35,7 @@ export class SigninComponent {
           this.router.navigate(['/admin']);                   
         }else if (roles !== 'admin' ){
           this.router.navigate(['/']);
+          location.reload();
         }                                        
         }
       );

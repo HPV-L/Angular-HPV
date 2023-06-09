@@ -3,7 +3,7 @@ interface InventoryStatus {
     value: string;
 }
 export interface IProduct {
-    id?: number | string;
+    _id?: number | string;
     code?: string;
     name?: string;
     description?: string;

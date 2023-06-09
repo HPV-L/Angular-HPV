@@ -91,7 +91,7 @@ export class AdminProductEditComponent {
   onHandleSubmit(){
     if(this.productForm.valid){
       const product: IProduct ={    
-        id: this.productList.id,
+        _id: this.productList._id,
         code:this.productForm.value.code || "",
         name:this.productForm.value.name || "",
         description:this.productForm.value.description || "",

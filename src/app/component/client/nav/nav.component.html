@@ -59,7 +59,7 @@
                                 <li><a> Signed in as <span><strong>{{user.user.username}}</strong></span></a></li>
                                 <li><a routerLink="/admin">Edit Your Profile</a></li>
                                 <li *ngIf="user.user.role == 'admin' "><a routerLink="/admin">Go to Dashboard</a></li>
-                                <li *ngIf="user.user.role != 'admin' "><a routerLink=""></a></li>
+                                <li *ngIf="user.user.role !== 'admin' "><a routerLink="">Follow your order</a></li>
                                 <li><a routerLink="" (click)="logout()">Log out</a></li>
                             </ul>
                         </div>

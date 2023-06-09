@@ -72,7 +72,7 @@ export class AdminProductListComponent implements OnInit {
 
   deleteProduct(product: IProduct) {
       this.deleteProductDialog = true;
-      this.productService.deleteProduct(product.id).subscribe(() =>{   
+      this.productService.deleteProduct(product._id).subscribe(() =>{   
         this.product = { ...product };
     })
   }
@@ -86,7 +86,7 @@ export class AdminProductListComponent implements OnInit {
 
   confirmDelete() {
       this.deleteProductDialog = false;
-      this.products = this.products.filter(val => val.id !== this.product.id);
+      this.products = this.products.filter(val => val._id !== this.product._id);
       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
       this.product = {};
   }
@@ -100,7 +100,7 @@ export class AdminProductListComponent implements OnInit {
 
       let index = -1;
       for (let i = 0; i < this.products.length; i++) {
-          if (this.products[i].id === id) {
+          if (this.products[i]._id === id) {
               index = i;
               break;
           }

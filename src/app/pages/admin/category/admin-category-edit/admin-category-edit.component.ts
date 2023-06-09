@@ -51,11 +51,12 @@ export class AdminCategoryEditComponent {
   onHandleSubmit(){
     if(this.categoryForm.valid){
       const category: ICategory ={    
+        _id:this.category._id,
         name:this. categoryForm.value.name || "",
         date:this.category.date,
         updateDay: this.currentDateTime,
       }
-      this.CategoryService.addCategory(category).subscribe(data => {
+      this.CategoryService.editCategory(category).subscribe(data => {
        console.log(data);
         alert("Sửa thành công")
         this.redirect.navigate(["/admin/category"])      

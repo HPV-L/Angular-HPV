@@ -20,7 +20,7 @@ export class ProductService {
     return this.http.post<IProduct>(`http://localhost:8080/api/products`,product)
   }
   editProduct(product: IProduct): Observable<IProduct>{
-    return this.http.patch<IProduct>(`http://localhost:8080/api/products/${product.id}`,product)
+    return this.http.patch<IProduct>(`http://localhost:8080/api/products/${product._id}`,product)
   }
   deleteProduct(id :any): Observable<IProduct>{
     return this.http.delete<IProduct>(`http://localhost:8080/api/products/${id}`)

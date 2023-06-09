@@ -148,10 +148,10 @@
                             </tbody>
                         </table><!-- End .table table-summary -->
 
-                        <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO CHECKOUT</a>
+                        <a href="checkout" class="btn btn-outline-primary-2 btn-order btn-block">Buy Now</a>
                     </div><!-- End .summary -->
 
-                    <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
+                    <a href="shop" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
                 </aside><!-- End .col-lg-3 -->
             </div><!-- End .row -->
         </div><!-- End .container -->
@@ -160,5 +160,5 @@
 
 <div class="errorcart"  *ngIf="carts.length == 0">
     <h1 class="warning-error d-flex justify-content-center">There are no products in the cart !!!</h1>
-    <a class=" mt-3 d-flex justify-content-center p-0" routerLink="/product" role="button">back to the store to buy</a>
+    <a class=" mt-3 d-flex justify-content-center p-0" routerLink="/shop" role="button">Back to the store to buy</a>
 </div>
