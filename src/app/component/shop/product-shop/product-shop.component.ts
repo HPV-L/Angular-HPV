@@ -20,7 +20,7 @@ constructor (
   this.productService.getAllProducts().subscribe((data:any) =>{
     console.log(data)
     
-    this.listProduct = data.data
+    this.listProduct = data
 
 
   })
