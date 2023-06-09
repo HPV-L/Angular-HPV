@@ -78,6 +78,7 @@ import { ContainerContactComponent } from './component/contact/container-contact
 import { PageContentContactComponent } from './component/contact/page-content-contact/page-content-contact.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
 
 
 
@@ -129,6 +130,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     PageContentContactComponent,
     ContactPageComponent,
     NotFoundPageComponent,
+    DetailOrderPageComponent,
    
 
   

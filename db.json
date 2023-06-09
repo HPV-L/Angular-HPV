@@ -216,6 +216,33 @@
       "notes": "ggg",
       "status": 1,
       "id": 1
+    },
+    {
+      "name": "don hang 1",
+      "idProduct": [
+        {
+          "id": "648352c6eb3da735fdaf5fd0",
+          "name": "Hoang ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 1
+        },
+        {
+          "id": "648352b2eb3da735fdaf5fc8",
+          "name": "Loan ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 1
+        }
+      ],
+      "city": "Ha noi",
+      "address": "hanoi",
+      "quantyti": 2,
+      "total": 24,
+      "days": "2023-06-10 04:42:26",
+      "notes": "ko co gi",
+      "status": 1,
+      "id": 2
     }
   ]
 }

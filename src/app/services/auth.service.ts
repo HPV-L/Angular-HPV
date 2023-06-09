@@ -50,7 +50,7 @@ getRole() :any{
 getID(){
   const data = JSON.parse(localStorage?.getItem('user') as string)
   if(data){
-    const id = data.user.id
+    const id = data.user._id
     return id
   }else{
     return null
