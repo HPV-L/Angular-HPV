@@ -1,4 +1,30 @@
 {
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$a5MW1.nwnNrC6gfFhbmR4.wF7tlomiFslxTJhTXUX9pWJJtrOXD.C",
+      "name": "admin",
+      "img": "https://scontent.fhan15-1.fna.fbcdn.net/v/t1.6435-9/192051162_165635028905881_4097440849009040676_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j64r64hvP2gAX_UBDJM&_nc_ht=scontent.fhan15-1.fna&oh=00_AfBxi4rXvwkS65Ahd2GKJacrnxt4AN0-PNg9SJg5MrqliQ&oe=649B770A",
+      "address": "Ngõ 148 ,Xuân Phương,Phương canh",
+      "sdt": "0793576765",
+      "role": 1,
+      "id": 4
+    },
+    {
+      "email": "vu123@email.com",
+      "password": "$2a$10$A3W21oBTmgih2.AuvxqGJ..833L1QlZcNtilo2zX5vZiFjgDy5DIa",
+      "name": "vu123",
+      "role": 0,
+      "id": 5
+    },
+    {
+      "email": "vu123@gmail.com",
+      "password": "$2a$10$q3V4cdDZ5ttIeutAWirxC.7xrlevQ3J8GkeUDPSateiqVhYWZUwHu",
+      "name": "vu",
+      "role": 0,
+      "id": 6
+    }
+  ],
   "products": [
     {
       "code": "39638",

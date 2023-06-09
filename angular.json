@@ -32,10 +32,18 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/css/style.css",
+              "assets/css/style.css",
               "assets/css/plugins/owl-carousel/owl.carousel.css"
             ],
             "scripts": [
+              "assets/js/main.js",
+              "assets/js/jquery.min.js",
+              "assets/js/bootstrap.bundle.min.js",
+              "assets/js/jquery.hoverIntent.min.js",
+              "assets/js/jquery.waypoints.min.js",
+              "assets/js/superfish.min.js",
+              "assets/js/owl.carousel.min.js",
+              "assets/js/jquery.magnific-popup.min.js"
           ]
           },
           "configurations": {
@@ -100,12 +108,19 @@
               "styles.scss",            
               "assets/css/style.css",
               "assets/css/plugins/owl-carousel/owl.carousel.css",
-              "assets/css/plugins/magnific-popup/magnific-popup.css",
-              "assets/css/plugins/owl-carousel/owl.carousel.css"
+              "assets/css/plugins/magnific-popup/magnific-popup.css"
+              
              
             ],
             "scripts": [
-       
+              "assets/js/main.js",
+              "assets/js/jquery.min.js",
+              "assets/js/bootstrap.bundle.min.js",
+              "assets/js/jquery.hoverIntent.min.js",
+              "assets/js/jquery.waypoints.min.js",
+              "assets/js/superfish.min.js",
+              "assets/js/owl.carousel.min.js",
+              "assets/js/jquery.magnific-popup.min.js"
             ]
           }
         }

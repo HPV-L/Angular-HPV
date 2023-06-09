@@ -15,6 +15,9 @@ import { AdminCategoryListComponent } from './pages/admin/category/admin-categor
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
+import { SigninComponent } from './component/client/signin/signin.component';
+
+import { AdminGuard } from './services/admin.guard';
 
 
 
@@ -24,10 +27,12 @@ const routes: Routes = [
     {path: "shop", component: ShopPageComponent},
     {path: "checkout", component: CheckoutComponent},
     {path: "cart", component: CartDetailComponent},
+   
   ]},
   
 
-  {path: "admin", component: AppLayoutComponent,children:[
+  {path: "admin", component: AppLayoutComponent, canActivate: [AdminGuard] ,
+  children:[
     {path: "", redirectTo:"dashboard",pathMatch: "full"},
     {path: "dashboard", component: DashboardComponent},
 

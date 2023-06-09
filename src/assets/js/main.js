@@ -1,4 +1,5 @@
 // Main Js File
+
 $(document).ready(function () {
     'use strict';
 
@@ -786,3 +787,4 @@ $(document).ready(function () {
         }, 900)
     }
 });
+
