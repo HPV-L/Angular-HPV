@@ -15,10 +15,14 @@ import { AdminCategoryListComponent } from './pages/admin/category/admin-categor
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
+
+import { AdminGuard } from './services/admin.guard';
+
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { AboutContentComponent } from './component/about/about-content/about-content.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+
 
 
 
@@ -31,10 +35,12 @@ const routes: Routes = [
     {path: "contact", component: ContactPageComponent},
     {path: "checkout", component: CheckoutComponent},
     {path: "cart", component: CartDetailComponent},
+   
   ]},
   
 
-  {path: "admin", component: AppLayoutComponent,children:[
+  {path: "admin", component: AppLayoutComponent, canActivate: [AdminGuard] ,
+  children:[
     {path: "", redirectTo:"dashboard",pathMatch: "full"},
     {path: "dashboard", component: DashboardComponent},
 
