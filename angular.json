@@ -34,6 +34,10 @@
               "src/styles.scss",
               "src/assets/css/style.css",
               "src/assets/css/plugins/owl-carousel/owl.carousel.css"
+
+            
+              
+
             ],
             "scripts": [
               "src/assets/js/main.js",
@@ -108,8 +112,7 @@
               "styles.scss",            
               "src/assets/css/style.css",
               "src/assets/css/plugins/owl-carousel/owl.carousel.css",
-              "src/assets/css/plugins/magnific-popup/magnific-popup.css"
-              
+              "src/assets/css/plugins/magnific-popup/magnific-popup.css"            
              
             ],
             "scripts": [
