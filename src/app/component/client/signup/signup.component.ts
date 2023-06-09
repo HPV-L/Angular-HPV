@@ -31,7 +31,7 @@ export class SignupComponent {
          alert('password ko chugn nhau')
         } else{
           const user :IUser ={
-            name:this.userForm.value.name || "",
+            username:this.userForm.value.name || "",
             email:this.userForm.value.email || "",
             password:this.userForm.value.password || "",
             role: 0

@@ -17,8 +17,10 @@ constructor (
   private categoryService: CategoryService,
   private CartService: CartService
   ){
-  this.productService.getAllProducts().subscribe(data =>{
-    this.listProduct = data
+  this.productService.getAllProducts().subscribe((data:any) =>{
+    console.log(data)
+    
+    this.listProduct = data.data
 
 
   })
@@ -37,7 +39,7 @@ onAddCart(product: IProduct){
     let cartItem:any ={
       id:product.id,
       name:product.name,
-      img:product.image,
+      img:product.thumbnail,
       price:product.price,
       quantity:1,
     }
