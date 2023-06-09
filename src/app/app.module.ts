@@ -66,6 +66,19 @@ import { NavigationShopComponent } from './component/shop/navigation-shop/naviga
 import { AsideShopComponent } from './component/shop/aside-shop/aside-shop.component';
 import { SigninComponent } from './component/client/signin/signin.component';
 import { SignupComponent } from './component/client/signup/signup.component';
+import { PageHeaderComponent } from './component/blog/page-header/page-header.component';
+import { BreadcrumbComponent } from './component/blog/breadcrumb/breadcrumb.component';
+import { PageContentComponent } from './component/blog/page-content/page-content.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { BreadcrumbAboutComponent } from './component/about/breadcrumb-about/breadcrumb-about.component';
+import { AboutContentComponent } from './component/about/about-content/about-content.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { BreadcrumbContactComponent } from './component/contact/breadcrumb-contact/breadcrumb-contact.component';
+import { ContainerContactComponent } from './component/contact/container-contact/container-contact.component';
+import { PageContentContactComponent } from './component/contact/page-content-contact/page-content-contact.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+
 
 
 
@@ -102,7 +115,20 @@ import { SignupComponent } from './component/client/signup/signup.component';
     NavigationShopComponent,
     AsideShopComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    PageHeaderComponent,
+    BreadcrumbComponent,
+    PageContentComponent,
+    BlogPageComponent,
+    BreadcrumbAboutComponent,
+    AboutContentComponent,
+    AboutPageComponent,
+    BreadcrumbContactComponent,
+    ContainerContactComponent,
+    PageContentContactComponent,
+    ContactPageComponent,
+    NotFoundPageComponent,
+
   
 
   ],
