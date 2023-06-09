@@ -15,6 +15,10 @@ import { AdminCategoryListComponent } from './pages/admin/category/admin-categor
 import { AdminCategoryAddComponent } from './pages/admin/category/admin-category-add/admin-category-add.component';
 import { AdminCategoryEditComponent } from './pages/admin/category/admin-category-edit/admin-category-edit.component';
 import { ShopPageComponent } from './pages/shop-page/shop-page.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { AboutContentComponent } from './component/about/about-content/about-content.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 
 
@@ -22,6 +26,9 @@ const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
     {path: "", component: HomePageComponent},
     {path: "shop", component: ShopPageComponent},
+    {path: "blog", component: BlogPageComponent},
+    {path: "about", component: AboutContentComponent},
+    {path: "contact", component: ContactPageComponent},
     {path: "checkout", component: CheckoutComponent},
     {path: "cart", component: CartDetailComponent},
   ]},
@@ -39,7 +46,10 @@ const routes: Routes = [
     {path: "category", component: AdminCategoryListComponent},
     {path:"category/:id/edit",component:AdminCategoryEditComponent},
     {path:"category/add",component:AdminCategoryAddComponent}
-  ]}
+  ]},
+
+
+  {path:"**",component:NotFoundPageComponent}
 ];
 
 @NgModule({
