@@ -65,11 +65,11 @@ export class AdminCategoryListComponent implements OnInit {
             //    console.log(products);
                
                this.productListCateId.forEach(product => {
-                 this.categoryService.deleteProduct(product.id).subscribe();
+                 this.categoryService.deleteProduct(product._id).subscribe();
                });       
              });
         }
-        this.categoryService.deleteCategory(category.id).subscribe(() =>{
+        this.categoryService.deleteCategory(category._id).subscribe(() =>{
           this.category = { ...category };
       })
         
@@ -85,7 +85,7 @@ export class AdminCategoryListComponent implements OnInit {
   
     confirmDelete() {
         this.deleteCategoryDialog = false;
-        this.categories = this.categories.filter(val => val.id !== this.category.id);
+        this.categories = this.categories.filter(val => val._id !== this.category._id);
         this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
         this.category = {};
     }
@@ -99,7 +99,7 @@ export class AdminCategoryListComponent implements OnInit {
   
         let index = -1;
         for (let i = 0; i < this.categories.length; i++) {
-            if (this.categories[i].id === id) {
+            if (this.categories[i]._id === id) {
                 index = i;
                 break;
             }

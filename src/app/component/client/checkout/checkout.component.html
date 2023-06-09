@@ -19,7 +19,7 @@
         <div class="checkout">
             <div class="container">
              
-                <form action="#">
+                <form action="#" [formGroup] ="productForm">
                     <div class="row">
                         <div class="col-lg-9">
                             <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
@@ -118,6 +118,6 @@
 </div>
 
 <div class="errorcart"  *ngIf="carts.length == 0">
-    <h1 class="warning-error d-flex justify-content-center">There are no products in the cart !!!</h1>
-    <a class=" mt-3 d-flex justify-content-center p-0" routerLink="/product" role="button">back to the store to buy</a>
+    <h1 class="warning-error d-flex justify-content-center">Don't have products in cart !!!</h1>
+    <a class=" mt-3 d-flex justify-content-center p-0" routerLink="/shop" role="button">Back to the store to buy</a>
 </div>

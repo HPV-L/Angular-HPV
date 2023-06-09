@@ -52,7 +52,7 @@ export class CheckoutComponent {
   buyNow(){
     const confirm = window.confirm("Bạn có chắc muốn mua hàng")
     if(confirm){
-      if(this.role == 0){
+      if(this.role !== "admin"){
         const listOder : IOrder = {
           name: this.productForm.value.name || "",
           idUser: this.idUser,
@@ -66,12 +66,13 @@ export class CheckoutComponent {
           status: 1
         }
        this.OrderService.addOrder(listOder).subscribe( () =>{
+        alert('thanh cong')
         sessionStorage.clear()
         this.carts=[]
         // this.Route.navigate(["/detailorder"])
        })
       } else if (this.role == "admin"){
-        alert('bạn là amdin ko đc mua hàng')
+        alert('bạn là admin ko đc mua hàng')
       } else{
         alert('bạn cần đăng nhập')
       }

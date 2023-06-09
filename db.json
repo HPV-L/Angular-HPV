@@ -42,7 +42,7 @@
   "products": [
     {
       "code": "39638",
-      "name": "Brown paperbag waist pencil skirt",
+      "name": "Brown paperbag waist pencil skirt A",
       "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
       "importPrice": "10",
       "price": "60",
@@ -56,7 +56,7 @@
     },
     {
       "code": "39638",
-      "name": "Brown paperbag waist pencil skirt",
+      "name": "Brown paperbag waist pencil skirt B",
       "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
       "importPrice": "10",
       "price": "60",
@@ -70,7 +70,7 @@
     },
     {
       "code": "39638",
-      "name": "Brown paperbag waist pencil skirt",
+      "name": "Brown paperbag waist pencil skirt C",
       "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
       "importPrice": "10",
       "price": "60",
@@ -84,7 +84,7 @@
     },
     {
       "code": "39638",
-      "name": "Brown paperbag waist pencil skirt",
+      "name": "Brown paperbag waist pencil skirt D",
       "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
       "importPrice": "10",
       "price": "60",
@@ -98,7 +98,7 @@
     },
     {
       "code": "39638",
-      "name": "Brown paperbag waist pencil skirt",
+      "name": "Brown paperbag waist pencil skirt E",
       "description": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.",
       "importPrice": "10",
       "price": "60",
@@ -173,6 +173,49 @@
       "date": "2023-06-07 23:03:48",
       "updateDay": "Chưa chập nhật",
       "id": 8
+    }
+  ],
+  "order": [
+    {
+      "name": "ggg",
+      "idProduct": [
+        {
+          "id": "648352c6eb3da735fdaf5fd0",
+          "name": "Hoang ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 2
+        },
+        {
+          "id": "648352b2eb3da735fdaf5fc8",
+          "name": "Loan ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 1
+        },
+        {
+          "id": "648352b7eb3da735fdaf5fcc",
+          "name": "MP ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 1
+        },
+        {
+          "id": "648352c9eb3da735fdaf5fd4",
+          "name": "Vu ngu",
+          "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
+          "price": 12,
+          "quantity": 1
+        }
+      ],
+      "city": "Ha noi",
+      "address": "hanoi",
+      "quantyti": 5,
+      "total": 60,
+      "days": "2023-06-10 03:03:19",
+      "notes": "ggg",
+      "status": 1,
+      "id": 1
     }
   ]
 }
