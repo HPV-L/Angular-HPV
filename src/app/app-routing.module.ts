@@ -22,8 +22,7 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { AboutContentComponent } from './component/about/about-content/about-content.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-
-
+import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
 
 
 const routes: Routes = [
@@ -34,6 +33,7 @@ const routes: Routes = [
     {path: "about", component: AboutContentComponent},
     {path: "contact", component: ContactPageComponent},
     {path: "checkout", component: CheckoutComponent},
+    {path: "detailorder", component: DetailOrderPageComponent},
     {path: "cart", component: CartDetailComponent},
    
   ]},

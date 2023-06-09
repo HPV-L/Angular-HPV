@@ -63,5 +63,6 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('user');
     this.user = null;
     this.router.navigate(['/']);
+    location.reload();
   }
 }

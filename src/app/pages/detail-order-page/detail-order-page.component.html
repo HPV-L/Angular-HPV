@@ -1,0 +1,79 @@
+
+
+<div *ngIf="detailOrder.length">
+    <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        <div class="container">
+            <h1 class="page-title">Detail Order<span>Shop</span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="shop">Shop</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Detail Order</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+    
+    <div class="page-content">
+        <div class="cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-cart table-mobile">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                                  
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+    
+                                <tr *ngFor="let order of detailOrder ; let i = index">
+                                    <td class="product-col">
+                                        <div class="product">
+                                            <figure class="product-media">
+                                                <a href="#">
+                                                    <p>{{i + 1}}</p>
+                                                </a>
+                                            </figure>
+                                            
+                                            <h3 class="product-title"  *ngFor=" let names of order.product ; let is = index">
+                                                <a href="#"> {{is + 1}} : {{names.name}} , </a> <br />
+                                            </h3><!-- End .product-title -->
+                                        </div><!-- End .product -->
+                                    </td>
+                                    <td class="price-col">{{order.total}}</td>
+    
+                                        <td class="price-col">{{order.quantyti}}</td>
+    
+                                    <td class="total-col">Chưa được duyệt</td>
+                                    <td class="remove-col"><button class="btn-remove" (click)="huyDon()"><i class="icon-close"></i></button></td>
+                                </tr>
+    
+                                
+                            </tbody>
+                        </table><!-- End .table table-wishlist -->
+    
+                        <div class="cart-bottom">
+                            <a href="#" class="btn btn-outline-dark-2" ><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+                        </div><!-- End .cart-bottom -->
+                    </div><!-- End .col-lg-9 -->
+                
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </div><!-- End .cart -->
+    </div><!-- End .page-content -->
+</div>
+
+
+<div *ngIf="detailOrder.length === 0">
+    <h1>Bạn đéo có đơn hàng nào</h1>
+    <a routerLink="/product"> Quay lại để mua hàng</a>
+</div>

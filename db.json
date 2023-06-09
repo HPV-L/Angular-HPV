@@ -4,39 +4,39 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$a5MW1.nwnNrC6gfFhbmR4.wF7tlomiFslxTJhTXUX9pWJJtrOXD.C",
       "name": "admin",
-      "img": "https://scontent.fhan15-1.fna.fbcdn.net/v/t1.6435-9/192051162_165635028905881_4097440849009040676_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j64r64hvP2gAX_UBDJM&_nc_ht=scontent.fhan15-1.fna&oh=00_AfBxi4rXvwkS65Ahd2GKJacrnxt4AN0-PNg9SJg5MrqliQ&oe=649B770A",
+      "img": "https://scontent.fhan15-1.fna.fbcdn.net/v/t1.6435-9/192051162_165635028905881_4097440849009040676_n.jpg?_nc_cat=105&ccb=1-7&_nc_s_id=09cbfe&_nc_ohc=j64r64hvP2gAX_UBDJM&_nc_ht=scontent.fhan15-1.fna&oh=00_AfBxi4rXvwkS65Ahd2GKJacrnxt4AN0-PNg9SJg5MrqliQ&oe=649B770A",
       "address": "Ngõ 148 ,Xuân Phương,Phương canh",
       "sdt": "0793576765",
-      "role": 1,
-      "id": 4
+      "role": "admin",
+      "_id": 4
     },
     {
       "email": "vu123@email.com",
       "password": "$2a$10$A3W21oBTmgih2.AuvxqGJ..833L1QlZcNtilo2zX5vZiFjgDy5DIa",
       "name": "vu123",
-      "role": 0,
-      "id": 5
+      "role": "member",
+      "_id": 5
     },
     {
       "email": "vu123@gmail.com",
       "password": "$2a$10$q3V4cdDZ5ttIeutAWirxC.7xrlevQ3J8GkeUDPSateiqVhYWZUwHu",
-      "name": "vu",
+      "name": "member",
       "role": 0,
-      "id": 6
+      "_id": 6
     },
     {
       "email": "hoang@gmail.com",
       "password": "$2a$10$LKxEgEQk7d.gleU7KE569OqfBrmYjL/pebpoYGqWlVAKF1N37gfbC",
       "name": "hoang",
-      "role": 0,
-      "id": 7
+      "role": "member",
+      "_id": 7
     },
     {
       "email": "phuongngu@gmail.com",
       "password": "$2a$10$PwEd4P2rEYz7cbGuNO09huyz/TggPedc8w3XVAQxGYVEOP7vZNBkq",
       "name": "phuong ngu",
-      "role": 0,
-      "id": 8
+      "role": "member",
+      "_id": 8
     }
   ],
   "products": [
@@ -48,11 +48,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 1
+      "_id": 1
     },
     {
       "code": "39638",
@@ -62,11 +62,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 2
+      "_id": 2
     },
     {
       "code": "39638",
@@ -76,11 +76,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 3
+      "_id": 3
     },
     {
       "code": "39638",
@@ -90,11 +90,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 4
+      "_id": 4
     },
     {
       "code": "39638",
@@ -104,11 +104,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 5
+      "_id": 5
     },
     {
       "code": "39638",
@@ -118,11 +118,11 @@
       "price": "60",
       "quantity": "60",
       "status": 1,
-      "ProductCateID": "1",
+      "ProductCate_id": "1",
       "thumbnail": "https://mikenco.vn/wp-content/uploads/2023/01/322938219_869245214327061_3218792242822973491_n-300x300.jpg",
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
-      "id": 6
+      "_id": 6
     }
   ],
   "category": [
@@ -130,78 +130,78 @@
       "name": "Women",
       "date": "2023-06-07 23:02:47",
       "updateDay": "Chưa chập nhật",
-      "id": 1
+      "_id": 1
     },
     {
       "name": "Dresses",
       "date": "2023-06-07 23:02:59",
       "updateDay": "Chưa chập nhật",
-      "id": 2
+      "_id": 2
     },
     {
       "name": "Jackets",
       "date": "2023-06-07 23:03:08",
       "updateDay": "Chưa chập nhật",
-      "id": 3
+      "_id": 3
     },
     {
       "name": "Jeans",
       "date": "2023-06-07 23:03:15",
       "updateDay": "Chưa chập nhật",
-      "id": 4
+      "_id": 4
     },
     {
       "name": "Shoes",
       "date": "2023-06-07 23:03:26",
       "updateDay": "Chưa chập nhật",
-      "id": 5
+      "_id": 5
     },
     {
       "name": "Bags",
       "date": "2023-06-07 23:03:34",
       "updateDay": "Chưa chập nhật",
-      "id": 6
+      "_id": 6
     },
     {
       "name": "Shoes",
       "date": "2023-06-07 23:03:41",
       "updateDay": "Chưa chập nhật",
-      "id": 7
+      "_id": 7
     },
     {
       "name": "Jumpers",
       "date": "2023-06-07 23:03:48",
       "updateDay": "Chưa chập nhật",
-      "id": 8
+      "_id": 8
     }
   ],
   "order": [
     {
       "name": "ggg",
-      "idProduct": [
+      "product": [
         {
-          "id": "648352c6eb3da735fdaf5fd0",
+          "_id": "648352c6eb3da735fdaf5fd0",
           "name": "Hoang ngu",
           "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
           "price": 12,
           "quantity": 2
         },
         {
-          "id": "648352b2eb3da735fdaf5fc8",
+          "_id": "648352b2eb3da735fdaf5fc8",
           "name": "Loan ngu",
           "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
           "price": 12,
           "quantity": 1
         },
         {
-          "id": "648352b7eb3da735fdaf5fcc",
+          "_id": "648352b7eb3da735fdaf5fcc",
           "name": "MP ngu",
           "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
           "price": 12,
           "quantity": 1
         },
         {
-          "id": "648352c9eb3da735fdaf5fd4",
+          "_id": "648352c9eb3da735fdaf5fd4",
           "name": "Vu ngu",
           "img": "https://i.pinimg.com/236x/3b/23/71/3b237137e87c9a9d2018f0b4169d971d.jpg",
           "price": 12,
@@ -215,7 +215,7 @@
       "days": "2023-06-10 03:03:19",
       "notes": "ggg",
       "status": 1,
-      "id": 1
+      "_id": 1
     }
   ]
 }
