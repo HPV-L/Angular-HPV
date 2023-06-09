@@ -46,7 +46,7 @@ export class CheckoutComponent {
   subtotal(cart:any) {
     return cart.quantity * cart.price
   }
-
+  
 
   // buy
   buyNow(){
@@ -56,15 +56,17 @@ export class CheckoutComponent {
         const listOder : IOrder = {
           name: this.productForm.value.name || "",
           idUser: this.idUser,
-          idProduct: this.carts,
+          products: this.carts,
           city: this.productForm.value.city || "",
           address: this.productForm.value.address || "",
+          phone: this.productForm.value.phone || "",
           quantyti: this.totalQuantity,
           total: this.totalPrice,
-          days:this.currentDateTime,
           notes:this.productForm.value.notes || "",
-          status: 1
+          status: "Checking"
         }
+        console.log(listOder);
+        
        this.OrderService.addOrder(listOder).subscribe( () =>{
         alert('thanh cong')
         sessionStorage.clear()

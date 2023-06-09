@@ -12,15 +12,15 @@ export class OrderService {
     private http: HttpClient
   ) { }
     addOrder(orders :IOrder):Observable<IOrder>{
-      return this.http.post<IOrder>(`http://localhost:3000/order`,orders)
+      return this.http.post<IOrder>(`http://localhost:8080/api/order`,orders)
     }
     getAllOrder():Observable<IOrder[]>{
-      return this.http.get<IOrder[]>(`http://localhost:3000/order`)
+      return this.http.get<IOrder[]>(`http://localhost:8080/api/order`)
     }
     removeOrder(id :number):Observable<IOrder>{
-      return this.http.delete<IOrder>(`http://localhost:3000/order/${id}`)
+      return this.http.delete<IOrder>(`http://localhost:8080/api/order/${id}`)
     }
     getOrderById(id :number):Observable<IOrder>{
-      return this.http.get<IOrder>(`http://localhost:3000/order?idUser=${id}`)
+      return this.http.get<IOrder>(`http://localhost:8080/api/order?idUser=${id}`)
     }
 }
