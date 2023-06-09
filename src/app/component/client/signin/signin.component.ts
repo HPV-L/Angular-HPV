@@ -31,9 +31,9 @@ export class SigninComponent {
         const roles = data.user.role
         
         
-        if (roles == 1) {
-          this.router.navigate(['/admin/dashboard']);                   
-        }else if (roles == 0){
+        if (roles == 'admin') {
+          this.router.navigate(['/admin']);                   
+        }else if (roles !== 'admin' ){
           this.router.navigate(['/']);
         }                                        
         }

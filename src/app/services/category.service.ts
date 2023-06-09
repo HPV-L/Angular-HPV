@@ -16,27 +16,27 @@ export class CategoryService {
 
     // add
   addCategory(category:ICategory):Observable<ICategory>{
-    return this.http.post<ICategory>(`http://localhost:3000/category`,category)
+    return this.http.post<ICategory>(`http://localhost:8080/api/categories`,category)
   }
   //  lấy 1
   getCategory(id:Number):Observable<ICategory>{
-    return this.http.get<ICategory>(`http://localhost:3000/category/${id}`)
+    return this.http.get<ICategory>(`http://localhost:8080/api/categories/${id}`)
   }
   // lấy tất cả
   getAllCategory():Observable<ICategory[]>{
-    return this.http.get<ICategory[]>(`http://localhost:3000/category`)
+    return this.http.get<ICategory[]>(`http://localhost:8080/api/categories`)
   }
   // sủa category
   editCategory(category:ICategory):Observable<ICategory>{
-    return this.http.patch<ICategory>(`http://localhost:3000/category`,category)
+    return this.http.patch<ICategory>(`http://localhost:8080/api/categories`,category)
   }
   // xoa
   deleteCategory(id:any):Observable<ICategory>{
-    return this.http.delete<ICategory>(`http://localhost:3000/category/${id}`)
+    return this.http.delete<ICategory>(`http://localhost:8080/api/categories/${id}`)
   }
 
   getProductsByCategoryId(id:number | undefined):Observable<IProduct[]>{
-    const url = `http://localhost:3000/products?ProductCateID=${id}`;
+    const url = `http://localhost:3000/products?_expand=${id}`;
     return this.http.get<IProduct[]>(url)
   }
 

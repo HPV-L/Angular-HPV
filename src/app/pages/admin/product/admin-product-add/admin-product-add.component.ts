@@ -75,7 +75,7 @@ export class AdminProductAddComponent {
         quantity:this.productForm.value.quantity || 0,
         status:1,
         ProductCateID: this.productForm.value.ProductCateID || 0,
-        image:this.productForm.value.image || "",
+        thumbnail:this.productForm.value.image || "",
         date:this.currentDateTime,
         updateDay: "Chưa chập nhật",
 

@@ -1,6 +1,5 @@
 export interface ICategory{
-    code? :string;
-    id?:number;
+    id?:number | string;
     name?:string;
     date?:string;
     updateDay?:string;

@@ -55,9 +55,10 @@
                         </a>
                         <div class="header-menu">
                             <ul class="drop-down__user">
-                                <li><a> Signed in as <span><strong>{{user.user.name}}</strong></span></a></li>
-                                <li *ngIf="user.user.role == 1"><a routerLink="/admin">Go to Dashboard</a></li>
-                                <li *ngIf="user.user.role != 1"><a routerLink=""></a></li>
+                                <li><a> Signed in as <span><strong>{{user.user.username}}</strong></span></a></li>
+                                <li><a routerLink="/admin">Edit Your Profile</a></li>
+                                <li *ngIf="user.user.role == 'admin' "><a routerLink="/admin">Go to Dashboard</a></li>
+                                <li *ngIf="user.user.role != 'admin' "><a routerLink=""></a></li>
                                 <li><a routerLink="" (click)="logout()">Log out</a></li>
                             </ul>
                         </div>

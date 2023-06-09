@@ -14,7 +14,7 @@ export class AdminGuard implements CanActivate {
   canActivate(): boolean {
     const userRole = this.AuthService.getRole(); // Lấy vai trò của người dùng từ localStorage hoặc nguồn dữ liệu khác
 
-    if (userRole == 1) {
+    if (userRole == 'admin') {
       return true; // Cho phép truy cập vào trang admin
     } else {
       this.router.navigate(['/']); // Chuyển hướng người dùng đến trang chủ hoặc trang khác

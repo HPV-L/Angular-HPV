@@ -57,7 +57,7 @@ export class AdminProductEditComponent {
           importPrice:this.productList.importPrice,
           price:this.productList.price,
           description:this.productList.description,
-          image:this.productList.image,
+          image:this.productList.thumbnail,
           // category:this.dropdownItems,
           
         })
@@ -100,7 +100,7 @@ export class AdminProductEditComponent {
         quantity:this.productForm.value.quantity || 0,
         status:1,
         ProductCateID:this.productForm.value.ProductCateID || 0,
-        image:this.productForm.value.image || "",
+        thumbnail:this.productForm.value.image || "",
         date:this.productList.date || "",
         updateDay: this.currentDateTime,
 

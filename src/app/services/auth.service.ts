@@ -14,20 +14,20 @@ export class AuthService {
   ) { }
  // đăng nhập đăng kí
  signin(user :IUser):Observable<IUser[]>{
-  return this.http.post<IUser[]>(`http://localhost:3000/login`,user)
+  return this.http.post<IUser[]>(`http://localhost:8080/api/signin`,user)
 }
 signup(user: IUser): Observable<IUser[]> {
-  return this.http.post<IUser[]>(`http://localhost:3000/register`,user)
+  return this.http.post<IUser[]>(`http://localhost:8080/api/signup`,user)
 }
 // actions user
 getAllUsers(): Observable<IUser[]>{
-  return this.http.get<IUser[]>(`http://localhost:3000/users`)
+  return this.http.get<IUser[]>(`http://localhost:8080/api/users`)
 }
 removetUsers(id:number): Observable<IUser[]>{
-  return this.http.delete<IUser[]>(`http://localhost:3000/users/${id}`)
+  return this.http.delete<IUser[]>(`http://localhost:8080/api/users/${id}`)
 }
 editUser(user:IUser):Observable<IUser>{
-  return this.http.patch<IUser>(`http://localhost:users${user.id}`,user)
+  return this.http.patch<IUser>(`http://localhost:8080/api/users${user.id}`,user)
 }
 
 
