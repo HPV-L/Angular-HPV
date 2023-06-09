@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-nav',
@@ -6,15 +7,24 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  constructor (private cartService: CartService){
+  constructor (
+    private cartService: CartService,
+    private router: Router
+    ){
 
   }
+  user: any;
   buy: boolean = false;
   carts:any =[]
   totalQuantity:number = this.cartService.getCartQuatity()
   totalPrice:number = this.cartService.getCartPrice()
 
   ngOnInit():void {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+      
+    }
     this.carts= this.cartService.getCart()
   }
   subtotal(cart:any) {
@@ -49,5 +59,9 @@ export class NavComponent implements OnInit {
     this.carts=[]
    }
   }
-
+  logout() {
+    localStorage.removeItem('user');
+    this.user = null;
+    this.router.navigate(['/']);
+  }
 }

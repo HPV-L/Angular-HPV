@@ -38,11 +38,10 @@ export class SignupComponent {
           }
           this.authService.signup(user).subscribe(
             (response) =>{
-              console.log('Đăng kí thành công',response);        
+              console.log('Đăng kí thành công',response);
             },
             (error) =>{
               console.error('đã xảy ra lỗi' , error);
-              
             }
           )
         }

@@ -23,6 +23,20 @@
       "name": "vu",
       "role": 0,
       "id": 6
+    },
+    {
+      "email": "hoang@gmail.com",
+      "password": "$2a$10$LKxEgEQk7d.gleU7KE569OqfBrmYjL/pebpoYGqWlVAKF1N37gfbC",
+      "name": "hoang",
+      "role": 0,
+      "id": 7
+    },
+    {
+      "email": "phuongngu@gmail.com",
+      "password": "$2a$10$PwEd4P2rEYz7cbGuNO09huyz/TggPedc8w3XVAQxGYVEOP7vZNBkq",
+      "name": "phuong ngu",
+      "role": 0,
+      "id": 8
     }
   ],
   "products": [
@@ -67,7 +81,7 @@
       "date": "2023-06-07 23:03:54",
       "updateDay": "Chưa chập nhật",
       "id": 3
-    } , 
+    },
     {
       "code": "39638",
       "name": "Brown paperbag waist pencil skirt",
@@ -110,8 +124,6 @@
       "updateDay": "Chưa chập nhật",
       "id": 6
     }
-
-
   ],
   "category": [
     {

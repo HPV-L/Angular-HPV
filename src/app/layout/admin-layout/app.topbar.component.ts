@@ -1,20 +1,56 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { LayoutService } from "./service/app.layout.service";
+import { LayoutService } from './service/app.layout.service';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-topbar',
-    templateUrl: './app.topbar.component.html'
+  selector: 'app-topbar',
+  templateUrl: './app.topbar.component.html',
 })
-export class AppTopBarComponent {
+export class AppTopBarComponent implements OnInit {
+  items!: MenuItem[];
+  user: any;
 
-    items!: MenuItem[];
+  @ViewChild('menubutton') menuButton!: ElementRef;
 
-    @ViewChild('menubutton') menuButton!: ElementRef;
+  @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
 
-    @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
+  @ViewChild('topbarmenu') menu!: ElementRef;
 
-    @ViewChild('topbarmenu') menu!: ElementRef;
+  constructor(
+    public layoutService: LayoutService,
+    private router: Router) {}
 
-    constructor(public layoutService: LayoutService) { }
+  ngOnInit(): void {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+    }
+
+    this.items = [
+      {
+        label: 'Infomation',
+        items: [
+          {
+            label: `${this.user.user.name}`,
+            icon: 'pi pi-user',
+            url: '',
+          },
+          {
+            label: 'Quit',
+            icon: 'pi pi-fw pi-power-off',
+            command: () => this.logout()
+          },
+        ],
+      },
+    ];
+  }
+  logout() {
+    // Xóa dữ liệu người dùng từ localStorage
+    localStorage.removeItem('user');
+    
+    // Đặt lại giá trị của biến người dùng
+    this.user = null;
+    this.router.navigate(['/']);
+  }
 }
