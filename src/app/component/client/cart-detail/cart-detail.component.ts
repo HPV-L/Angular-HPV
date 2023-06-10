@@ -11,7 +11,7 @@ export class CartDetailComponent {
     private CartService:CartService
    
   ){
-
+    this.carts= this.CartService.getCart()
   }
   // danh sách cart
   carts:any =[]
@@ -20,10 +20,10 @@ export class CartDetailComponent {
   // tổng số lượng sản phẩm
   totalPrice:number = this.CartService.getCartPrice()
 
-  ngOnInit():void {
-    this.carts= this.CartService.getCart()
 
-  }
+    
+
+
   subtotal(cart:any) {
     return cart.quantity * cart.price
   }
