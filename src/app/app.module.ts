@@ -79,6 +79,9 @@ import { PageContentContactComponent } from './component/contact/page-content-co
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
+import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
+import { BreadcrumbDetailProductComponent } from './component/detail-product/breadcrumb-detail-product/breadcrumb-detail-product.component';
+import { ContentDetailProductComponent } from './component/detail-product/content-detail-product/content-detail-product.component';
 
 
 
@@ -131,6 +134,9 @@ import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order
     ContactPageComponent,
     NotFoundPageComponent,
     DetailOrderPageComponent,
+    DetailProductPageComponent,
+    BreadcrumbDetailProductComponent,
+    ContentDetailProductComponent,
    
 
   

@@ -23,12 +23,14 @@ import { AboutContentComponent } from './component/about/about-content/about-con
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
+import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 
 
 const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
     {path: "", component: HomePageComponent},
     {path: "shop", component: ShopPageComponent},
+    {path: "shop/detail", component: DetailProductPageComponent},
     {path: "blog", component: BlogPageComponent},
     {path: "about", component: AboutContentComponent},
     {path: "contact", component: ContactPageComponent},
