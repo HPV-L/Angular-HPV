@@ -4,6 +4,7 @@ interface InventoryStatus {
 }
 export interface IProduct {
     _id?: number | string;
+    slug?: string;
     code?: string;
     name?: string;
     description?: string;

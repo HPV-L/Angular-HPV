@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: "", component: BaseLayoutComponent, children:[
     {path: "", component: HomePageComponent},
     {path: "shop", component: ShopPageComponent},
-    {path: "shop/detail", component: DetailProductPageComponent},
+    {path: "shop/detail/:slug", component: DetailProductPageComponent},
     {path: "blog", component: BlogPageComponent},
     {path: "about", component: AboutContentComponent},
     {path: "contact", component: ContactPageComponent},

@@ -21,12 +21,14 @@ export class ContentDetailProductComponent {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private CartService:CartService
+    private CartService:CartService,
   ) {
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'));
-      this.productService.getProductById(id).subscribe(product => {
+      const id = String(param.get('slug'));
+      this.productService.getProductBySlug(id).subscribe(product => {
         this.product = product;
+        console.log(product);
+        
       }, error => console.log(error.message))
     })
   }

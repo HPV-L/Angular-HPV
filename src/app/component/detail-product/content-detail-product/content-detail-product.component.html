@@ -46,7 +46,7 @@
                         </div><!-- End .rating-container -->
 
                         <div class="product-price" *ngIf="product">
-                            {{product.price}}
+                           $ {{product.price}}
                         </div><!-- End .product-price -->
 
                         <div class="product-content" *ngIf="product">
@@ -90,7 +90,7 @@
                         </div><!-- End .details-filter-row -->
 
                         <div class="product-details-action">
-                            <a href="#" class="btn-product btn-cart" (click)="onAddCart(product!)"><span>add to cart</span></a>
+                            <button class="btn-product btn-cart" (click)="onAddCart(product!)"><span>add to cart</span></button>
 
                             <div class="details-action-wrapper">
                                 <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
