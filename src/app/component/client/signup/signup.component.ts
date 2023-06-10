@@ -28,13 +28,14 @@ export class SignupComponent {
     try {
       if(this.userForm.valid){
         if(this.userForm.value.confirmPassword !== this.userForm.value.password){
-         alert('password ko chugn nhau')
+         alert('password ko trung nhau')
         } else{
           const user :IUser ={
             username:this.userForm.value.name || "",
             email:this.userForm.value.email || "",
             password:this.userForm.value.password || "",
-            role: 0
+            confirmPassword:this.userForm.value.confirmPassword || "",
+            role: "member"
           }
           this.authService.signup(user).subscribe(
             (response) =>{

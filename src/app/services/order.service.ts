@@ -21,6 +21,6 @@ export class OrderService {
       return this.http.delete<IOrder>(`http://localhost:8080/api/order/${id}`)
     }
     getOrderById(id :number):Observable<IOrder>{
-      return this.http.get<IOrder>(`http://localhost:8080/api/order?idUser=${id}`)
+      return this.http.get<IOrder>(`http://localhost:8080/api/order/user/${id}`)
     }
 }
