@@ -44,8 +44,9 @@
                                                 </a>
                                             </figure>
                                             
-                                            <h3 class="product-title"  *ngFor=" let names of order.product ; let is = index">
-                                                <a href="#"> {{is + 1}} : {{names.name}} , </a> <br />
+                                            
+                                            <h3 class="product-title"  *ngFor=" let names of order.products ; let is = index">
+                                                <a href="#" class="mr-3">+ {{names.name}}  </a> <br />
                                             </h3><!-- End .product-title -->
                                         </div><!-- End .product -->
                                     </td>
@@ -74,6 +75,6 @@
 
 
 <div *ngIf="detailOrder.length === 0">
-    <h1>Bạn đéo có đơn hàng nào</h1>
+    <h1>Bạn ko có đơn hàng nào</h1>
     <a routerLink="/product"> Quay lại để mua hàng</a>
 </div>

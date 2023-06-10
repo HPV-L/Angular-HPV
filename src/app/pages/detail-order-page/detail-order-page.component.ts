@@ -16,6 +16,8 @@ export class DetailOrderPageComponent {
   ){
      this.orderService.getOrderById(this.idUser).subscribe( data =>{
         this.detailOrder = data
+        console.log(data);
+        
      })
   }
 
