@@ -60,7 +60,7 @@ export class CheckoutComponent {
           city: this.productForm.value.city || "",
           address: this.productForm.value.address || "",
           phone: this.productForm.value.phone || "",
-          quantyti: this.totalQuantity,
+          quantity: this.totalQuantity,
           total: this.totalPrice,
           notes:this.productForm.value.notes || "",
           status: "Checking"
@@ -78,9 +78,6 @@ export class CheckoutComponent {
       } else{
         alert('bạn cần đăng nhập')
       }
-     
-    }
-    
-  }
-  
+    } 
+  } 
 }

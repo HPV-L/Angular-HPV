@@ -46,6 +46,8 @@ import { ChipsModule } from "primeng/chips";
 import { InputMaskModule } from "primeng/inputmask";
 import { CascadeSelectModule } from "primeng/cascadeselect";
 import { MultiSelectModule } from "primeng/multiselect";
+import { CheckboxModule } from 'primeng/checkbox';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
@@ -83,9 +85,9 @@ import { DetailProductPageComponent } from './pages/detail-product-page/detail-p
 import { BreadcrumbDetailProductComponent } from './component/detail-product/breadcrumb-detail-product/breadcrumb-detail-product.component';
 import { ContentDetailProductComponent } from './component/detail-product/content-detail-product/content-detail-product.component';
 
-
-
-
+// Drop zone 
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
 
 
 @NgModule({
@@ -137,6 +139,7 @@ import { ContentDetailProductComponent } from './component/detail-product/conten
     DetailProductPageComponent,
     BreadcrumbDetailProductComponent,
     ContentDetailProductComponent,
+    CanceledOrderComponent,
    
 
   
@@ -174,7 +177,9 @@ import { ContentDetailProductComponent } from './component/detail-product/conten
     InputMaskModule,
     CascadeSelectModule,
     MultiSelectModule,
-
+    NgxDropzoneModule,
+    CheckboxModule,
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

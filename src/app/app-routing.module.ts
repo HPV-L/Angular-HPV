@@ -24,6 +24,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
+import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
     {path: "checkout", component: CheckoutComponent},
     {path: "detailorder", component: DetailOrderPageComponent},
     {path: "cart", component: CartDetailComponent},
+    {path: "order/canceled", component: CanceledOrderComponent},
    
   ]},
   

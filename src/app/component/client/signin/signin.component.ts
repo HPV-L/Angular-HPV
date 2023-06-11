@@ -32,10 +32,9 @@ export class SigninComponent {
         
         
         if (roles == 'admin') {
-          this.router.navigate(['/admin']);                   
+          location.href = "/admin"
         }else if (roles !== 'admin' ){
-          this.router.navigate(['/']);
-          location.reload();
+          location.href = "/"
         }                                        
         }
       );

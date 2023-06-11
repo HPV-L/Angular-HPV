@@ -61,10 +61,10 @@
             </h3><!-- End .widget-title -->
 
             <div class="collapse show" id="widget-3">
-                <div class="widget-body">
-                    <div class="filter-colors" *ngFor="let item of colorList">
-                        <a href="#" style="background: '{{item.color}}'"><span class="sr-only">Color Name</span></a>
-                    </div><!-- End .filter-colors -->
+                <div class="widget-body filter-colors">
+                    <ng-container class="filter-color" *ngFor="let item of colorList">
+                        <div class="input-color" data-id="{{ item._id }}" [style.background]="item.hex"><span class="sr-only">Color Name</span></div>
+                    </ng-container><!-- End .filter-colors -->
                 </div><!-- End .widget-body -->
             </div><!-- End .collapse -->
         </div><!-- End .widget -->

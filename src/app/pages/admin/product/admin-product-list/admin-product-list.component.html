@@ -52,7 +52,7 @@
                             <p-tableCheckbox [value]="product"></p-tableCheckbox>
                         </td>
                         <td style="width:14%; min-width:10rem;"><span class="p-column-title">Code</span>
-                            {{product.code || product.id}}
+                            {{product.code || product._id}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Name</span>
@@ -72,7 +72,7 @@
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Category</span>
-                            {{product.ProductCateID}}
+                            {{product.categoryId}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Quantity</span>
@@ -80,11 +80,11 @@
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">Date</span>
-                            {{product.date}}
+                            {{product.createdAt}}
                         </td>
                         <td style="width:14%; min-width:10rem;">
                             <span class="p-column-title">updateDay</span>
-                            {{product.updateDay}}
+                            {{product.updatedAt}}
                         </td>
                         
                         

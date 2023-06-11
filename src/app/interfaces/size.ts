@@ -1,4 +1,4 @@
 export interface ISize{
-    _id?:number | string;
+    _id?:string;
     name?:string;
 }

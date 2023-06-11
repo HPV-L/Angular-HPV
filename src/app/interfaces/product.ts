@@ -1,20 +1,21 @@
-interface InventoryStatus {
-    label: string;
-    value: string;
-}
+import { ICategory } from "./category";
+
 export interface IProduct {
     _id?: number | string;
-    slug?: string;
-    code?: string;
-    name?: string;
-    description?: string;
-    importPrice?: number;
-    price?: number;
-    quantity?: number;
-    status?: number;
-    ProductCateID?: number;
-    thumbnail?: string;
-    rating?: number;
-    date?:string;
-    updateDay?:string;
+    code?: string | number; 
+    name?: string,
+    thumbnail?: string,
+    quantity?: number,
+    importPrice?:number,
+    price?: number,
+    description?: string,
+    status?: string,
+    slug?: string,
+    categoryId?: string,
+    sizeId?:[],
+    colorId?:[],
+    createdAt?: Date,
+    updatedAt?: Date,
+    deletedAt?: Date,
+    deleted?: Boolean,
 }

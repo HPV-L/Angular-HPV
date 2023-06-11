@@ -23,7 +23,7 @@ export class AdminProductListComponent implements OnInit {
 
   products: IProduct[] = [];
 
-  product: | IProduct = {};
+  product:IProduct = {};
 
 
   selectedProducts: IProduct[] = [];
@@ -46,7 +46,8 @@ export class AdminProductListComponent implements OnInit {
 
   ngOnInit() {
 
-      this.productService.getAllProducts().subscribe(data => this.products = data);
+      this.productService.getAllProducts().subscribe((data:any) => {
+        this.products = data.data});
       this.cols = [
           { field: 'name', header: 'Name' },
           { field: 'price', header: 'Price' },
