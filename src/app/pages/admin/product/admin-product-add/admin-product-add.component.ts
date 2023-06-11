@@ -19,8 +19,9 @@ import { ColorService } from 'src/app/services/color.service';
   providers: [UploadService]
 })
 export class AdminProductAddComponent {
+  // statusImg : boolean = false
   colorList!:IColor[];
-  imageUploaded!: string;
+  imageUploaded : any = null;
   files: File[] = [];
   ProductCateID!:any
   selectedState: any = null;
@@ -62,12 +63,12 @@ export class AdminProductAddComponent {
   }
   
   // add
-  onHandleSubmit(){
-    if(this.productForm.valid){
+  async onHandleSubmit(){
+
       const product: IProduct ={    
         code:this.productForm.value.code || "",
         name:this.productForm.value.name || "",
-        thumbnail:this.productForm.value.thumbnail || "",
+        thumbnail:this.imageUploaded|| "",
         quantity:this.productForm.value.quantity || 0,
         importPrice:this.productForm.value.importPrice || 0,
         price:this.productForm.value.price || 0,              
@@ -76,16 +77,18 @@ export class AdminProductAddComponent {
         sizeId: this.productForm.value.sizeId || [],
         colorId: this.productForm.value.colorId || [],
       }
+      console.log(product);
+      
       this.productService.addProduct(product).subscribe(product => {
         console.log(product);
         alert("Thêm thành công")
         this.redirect.navigate(["/admin/product"])
        
       })
-    }
+ 
   }
-  
-  onSelect(event:any) {
+   onSelect(event:any) {
+    
     this.files.push(...event.addedFiles);
 
     if(!this.files[0]) alert('Upload false');
@@ -95,10 +98,13 @@ export class AdminProductAddComponent {
       data.append('file', file_data);
       data.append('upload_preset', 'angular-cloudinary');
       data.append('cloud_name', 'dxa8ks06k');
-      this.uploadService.uploadImage(data).subscribe(res => {
-        if(res) this.imageUploaded = res.secure_url;
+      this.uploadService.uploadImage(data).subscribe( async (res) => {
+         this.imageUploaded = await res.secure_url; 
+                  
       })
-    }
+  }
+
+    
     onRemove(event:any) {
       console.log(event);
       this.files.splice(this.files.indexOf(event), 1);

@@ -42,7 +42,7 @@ export class ProductService {
 
     // Tạo headers và thêm token vào headers
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.delete<IProduct>(this.apiUrl + `${id}`, { headers })
+    return this.http.delete<IProduct>(this.apiUrl +  `/${id}`, { headers })
   }
   getProductsByCategoryId(categoryId: number): Observable<IProduct[]> {
     const url = `http://localhost:8080/api/products?_expand=${categoryId}`;

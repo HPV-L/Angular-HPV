@@ -102,7 +102,7 @@
             <option
               rows="4"
               *ngFor="let catePro of ProductCateID"
-              value="{{ catePro.id }}"
+              value="{{ catePro._id }}"
             >
               {{ catePro.name }}
             </option>
@@ -115,7 +115,7 @@
             <div *ngFor="let size of sizeList" class="field-checkbox">
               <p-checkbox
                 name="group"
-                [value]="size"
+                [value]="size._id"
                 [(ngModel)]="selectedSize"
                 [inputId]="size._id"
                 formControlName="sizeId"
@@ -123,19 +123,28 @@
               <label [for]="size._id">{{ size.name }}</label>
             </div>
           </div>
-        </div>
+        </div> 
 
+        
         <div class="md:col-6">
           <label htmlFor="code">Màu</label>
           <div class="flex gap-2">
-            <ng-container *ngFor="let color of colorList" class="field-checkbox">
-              <div class="input-color" formControlName="colorId" data-id="{{ color._id }}" [style.background]="color.hex"></div>
-            </ng-container>
+            <div *ngFor="let color of colorList" class="field-checkbox">
+              <p-checkbox
+                name="group"
+                [value]="color._id"
+                [(ngModel)]="selectedColor"
+                [inputId]="color._id"
+                formControlName="colorId"
+              ></p-checkbox>
+              <label [for]="color._id">{{ color.name }}</label>
+            </div>
           </div>
-        </div>
+        </div> 
+
 
         <div class="field col-12 md:col-1">
-          <button type="submit" pButton>Thêm</button>
+          <button  type="submit" pButton>Thêm</button>
         </div>
       </div>
     </div>
