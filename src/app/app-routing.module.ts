@@ -25,6 +25,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
+import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
+import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
 
 
 const routes: Routes = [
@@ -55,7 +57,9 @@ const routes: Routes = [
     //category
     {path: "category", component: AdminCategoryListComponent},
     {path:"category/:id/edit",component:AdminCategoryEditComponent},
-    {path:"category/add",component:AdminCategoryAddComponent}
+    {path:"category/add",component:AdminCategoryAddComponent},
+
+    {path:"user",component:AdminUserListComponent}
   ]},
 
 

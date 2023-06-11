@@ -19,7 +19,7 @@ export class AuthService {
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(`http://localhost:8080/api/users`);
   }
-  removetUsers(id: number): Observable<IUser[]> {
+  removetUsers(id: any): Observable<IUser[]> {
     return this.http.delete<IUser[]>(`http://localhost:8080/api/users/${id}`);
   }
   editUser(user: IUser): Observable<IUser> {
