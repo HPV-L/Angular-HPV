@@ -1,6 +1,7 @@
 export interface ICategory{
     _id?:number | string;
     name?:string;
-    date?:string;
-    updateDay?:string;
+    products?: [],
+    createAt?:Date;
+    updateAt?:Date;
 }

@@ -55,13 +55,13 @@
     
                                     <tbody >
                                         <tr *ngFor="let cart of carts ; let i = index">
-                                            <td><a href="#">{{cart.name}}</a></td>
+                                            <td><a href="#">{{cart.name}} x {{cart.quantity}}</a></td>
                                             <td>{{cart.price}}</td>
                                         </tr>
                                         
                                         <tr class="summary-total">
                                             <td>Total:</td>
-                                            <td>{{totalQuantity}} x ${{totalPrice}}</td>
+                                            <td>${{totalPrice}}</td>
                                         </tr><!-- End .summary-total -->
                                     </tbody>
                                 </table><!-- End .table table-summary -->

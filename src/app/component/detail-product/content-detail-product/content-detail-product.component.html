@@ -54,28 +54,22 @@
                             <p>{{product.description}}</p>
                         </div><!-- End .product-content -->
 
-                        <div class="details-filter-row details-row-size">
+                        <div class="details-filter-row details-row-size" *ngIf="product.colorId">
                             <label>Color:</label>
 
                             <div class="product-nav product-nav-thumbs">
-                                <a href="#" class="active">
-                                    <img *ngIf="product" src="{{product.thumbnail}}" alt="product desc">
-                                </a>
-                                <a href="#">
-                                    <img *ngIf="product" src="{{product.thumbnail}}" alt="product desc">
-                                </a>
+                                <ng-container class="active" *ngFor="let item of product.colorId">
+                                    <a class="input-color" data-id="{{ item._id }}" [style.background]="item.hex"></a>
+                                </ng-container>
                             </div><!-- End .product-nav -->
                         </div><!-- End .details-filter-row -->
 
-                        <div class="details-filter-row details-row-size">
+                        <div class="details-filter-row details-row-size" *ngIf="product.sizeId">
                             <label for="size">Size:</label>
                             <div class="select-custom">
-                                <select name="size" id="size" class="form-control">
+                                <select name="size" id="size" class="form-control" >
                                     <option value="#" selected="selected">Select a size</option>
-                                    <option value="s">Small</option>
-                                    <option value="m">Medium</option>
-                                    <option value="l">Large</option>
-                                    <option value="xl">Extra Large</option>
+                                    <option *ngFor="let item of product.sizeId" value="{{item._id}}">{{item.name}}</option>
                                 </select>
                             </div><!-- End .select-custom -->
 
@@ -85,7 +79,7 @@
                         <div class="details-filter-row details-row-size">
                             <label for="qty">Qty:</label>
                             <div class="product-details-quantity">
-                                <input type="number" [(ngModel)]="quantitys"  id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                <input type="number" id="qty" class="form-control" value="1" min="1" max="100" step="1" data-decimals="0" required>
                             </div><!-- End .product-details-quantity -->
                         </div><!-- End .details-filter-row -->
 
@@ -99,11 +93,9 @@
                         </div><!-- End .product-details-action -->
 
                         <div class="product-details-footer">
-                            <div class="product-cat">
+                            <div class="product-cat" *ngIf="product.categoryId">
                                 <span>Category:</span>
-                                <a href="#">Women</a>,
-                                <a href="#">Dresses</a>,
-                                <a href="#">Yellow</a>
+                                <a href="#">{{product?.categoryId?.name}}</a>
                             </div><!-- End .product-cat -->
 
                             <div class="social-icons social-icons-sm">
@@ -136,9 +128,9 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel" aria-labelledby="product-desc-link">
-                    <div class="product-desc-content">
+                    <div class="product-desc-content" *ngIf="product">
                         <h3>Product Information</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. </p>
+                        <p>{{product.description}}</p>
                         <ul>
                             <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
                             <li>Vivamus finibus vel mauris ut vehicula.</li>

@@ -38,10 +38,10 @@ export class AdminCategoryListComponent implements OnInit {
   
     ngOnInit() {
   
-        this.categoryService.getAllCategory().subscribe(data => this.categories = data);
-      
+        this.categoryService.getAllCategory().subscribe(data => this.categories = data );
+        
     }
-  
+    
     openNew() {
         this.category = {};
         this.submitted = false;

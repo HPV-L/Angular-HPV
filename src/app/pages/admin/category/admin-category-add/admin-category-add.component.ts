@@ -40,8 +40,6 @@ export class AdminCategoryAddComponent {
     if(this.categoryForm.valid){
       const category: ICategory ={    
         name:this. categoryForm.value.name || "",
-        date:this.currentDateTime,
-        updateDay: "Chưa chập nhật",
       }
       this.CategoryService.addCategory(category).subscribe(data => {
        console.log(data);

@@ -28,9 +28,6 @@ constructor (
 carts :any[] = this.CartService.getCart();
 
 onAddCart(product: IProduct){
-  console.log('product:', product);
-  
- 
   let index = this.carts.findIndex((item) =>{
     return item._id == product._id
   })
@@ -40,7 +37,7 @@ onAddCart(product: IProduct){
     let cartItem:any ={
       id:product._id,
       name:product.name,
-      img:product.thumbnail,
+      thumbnail:product.thumbnail,
       price:product.price,
       quantity:1,
     }

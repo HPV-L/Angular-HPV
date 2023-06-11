@@ -51,10 +51,8 @@ export class AdminProductEditComponent {
         
         this.productList = product
         this.productForm.patchValue({
-          code:this.productList.code,        
           name: this.productList.name,
           quantity:this.productList.quantity,
-          importPrice:this.productList.importPrice,
           price:this.productList.price,
           description:this.productList.description,
           image:this.productList.thumbnail,
@@ -95,14 +93,9 @@ export class AdminProductEditComponent {
         code:this.productForm.value.code || "",
         name:this.productForm.value.name || "",
         description:this.productForm.value.description || "",
-        importPrice:this.productForm.value.importPrice || 0,
         price:this.productForm.value.price || 0,              
         quantity:this.productForm.value.quantity || 0,
-        status:1,
-        ProductCateID:this.productForm.value.ProductCateID || 0,
         thumbnail:this.productForm.value.image || "",
-        date:this.productList.date || "",
-        updateDay: this.currentDateTime,
 
       }
       this.productService.editProduct(product).subscribe(product => {

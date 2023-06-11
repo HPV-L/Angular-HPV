@@ -74,7 +74,4 @@ export class CartDetailComponent {
     this.carts=[]
    }
   }
-
-
-
 }

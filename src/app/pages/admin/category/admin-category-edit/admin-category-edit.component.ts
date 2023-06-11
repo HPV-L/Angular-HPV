@@ -15,15 +15,12 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminCategoryEditComponent {
   selectedState: any = null;
   category!:ICategory
-  @Input() imageUrl!: string;
   categoryForm = this.formBuilder.group({
     name: ["",[Validators.required]],
-    
   })
 
 
   // time
-  currentDateTime: string;
   
   constructor(
     private CategoryService:CategoryService,
@@ -31,13 +28,8 @@ export class AdminCategoryEditComponent {
     private redirect: Router,
     private route: ActivatedRoute,
   ){
-    const vietnamTimeZone = 'Asia/Ho_Chi_Minh';
-    const now = DateTime.now().setZone(vietnamTimeZone);
-    this.currentDateTime = now.toFormat('yyyy-MM-dd HH:mm:ss');
-    console.log(this.currentDateTime);
-    
     this.route.paramMap.subscribe(param => {
-      const id = Number(param.get('id'));
+      const id = String(param.get('id'));
       this.CategoryService.getCategory(id).subscribe(data => {
         this.category = data;
         this.categoryForm.patchValue({
@@ -53,8 +45,6 @@ export class AdminCategoryEditComponent {
       const category: ICategory ={    
         _id:this.category._id,
         name:this. categoryForm.value.name || "",
-        date:this.category.date,
-        updateDay: this.currentDateTime,
       }
       this.CategoryService.editCategory(category).subscribe(data => {
        console.log(data);

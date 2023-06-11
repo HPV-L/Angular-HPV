@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./content-detail-product.component.scss']
 })
 export class ContentDetailProductComponent {
-  product?:IProduct
+  product: any;
   quantitys?: number
   carts :any[] = this.CartService.getCart();
 
