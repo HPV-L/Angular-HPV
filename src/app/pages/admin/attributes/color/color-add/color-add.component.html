@@ -1,0 +1,23 @@
+<div class="col-12">
+    <form (ngSubmit)="onHandleSubmit()" [formGroup]="ColorForm">
+      <div class="card">
+        <h5>Thêm Color</h5>
+        <div class="p-fluid p-formgrid grid">
+          <div class="field col-12 md:col-12">
+            <label htmlFor="name">Tên màu</label>
+            <input pInputText id="name" type="text" formControlName="name" />
+          </div>
+          <div class="field col-12 md:col-12">
+            <label htmlFor="name">Mã màu</label>
+            <input pInputText id="name" type="text" formControlName="hex" />
+          </div>
+  
+
+          <div class="field col-12 md:col-1">
+            <button  type="submit" pButton>Thêm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,21 @@
+<div class="col-12">
+    <form (ngSubmit)="onHandleSubmit()" [formGroup]="SizeForm">
+      <div class="card">
+        <h5>Thêm Size</h5>
+        <div class="p-fluid p-formgrid grid">
+          <div class="field col-12 md:col-12">
+            <label htmlFor="name">Tên Size</label>
+            <input pInputText id="name" type="text" formControlName="name" />
+          </div>
+  
+
+  
+
+          <div class="field col-12 md:col-1">
+            <button  type="submit" pButton>Thêm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

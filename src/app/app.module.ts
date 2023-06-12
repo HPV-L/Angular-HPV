@@ -91,6 +91,12 @@ import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.co
 import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
 import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
 import { EditInfoComponent } from './component/client/edit-info/edit-info.component';
+import { ColorListComponent } from './pages/admin/attributes/color/color-list/color-list.component';
+import { ColorAddComponent } from './pages/admin/attributes/color/color-add/color-add.component';
+import { ColorEditComponent } from './pages/admin/attributes/color/color-edit/color-edit.component';
+import { SizeListComponent } from './pages/admin/attributes/size/size-list/size-list.component';
+import { SizeAddComponent } from './pages/admin/attributes/size/size-add/size-add.component';
+import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-edit.component';
 
 
 @NgModule({
@@ -146,6 +152,12 @@ import { EditInfoComponent } from './component/client/edit-info/edit-info.compon
     AdminUserListComponent,
     AdminUserEditComponent,
     EditInfoComponent,
+    ColorListComponent,
+    ColorAddComponent,
+    ColorEditComponent,
+    SizeListComponent,
+    SizeAddComponent,
+    SizeEditComponent,
    
 
   
