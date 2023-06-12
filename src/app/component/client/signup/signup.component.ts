@@ -31,11 +31,15 @@ export class SignupComponent {
          alert('password ko trung nhau')
         } else{
           const user :IUser ={
+          
             username:this.userForm.value.name || "",
             email:this.userForm.value.email || "",
             password:this.userForm.value.password || "",
+            // img:"https://static1.s123-cdn-static-a.com/uploads/3107639/800_5e9de73574b25.png",
+            // address:"Chưa cập nhật",
+            // sdt:"Chưa cập nhật",
             confirmPassword:this.userForm.value.confirmPassword || "",
-            role: "member"
+          
           }
           this.authService.signup(user).subscribe(
             (response) =>{

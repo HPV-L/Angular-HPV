@@ -35,6 +35,7 @@ onAddCart(product: IProduct){
     this.carts[index].quantity += 1
   }else{
     let cartItem:any ={
+      slug:product.slug,
       id:product._id,
       name:product.name,
       thumbnail:product.thumbnail,

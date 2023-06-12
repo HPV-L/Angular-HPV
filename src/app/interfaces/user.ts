@@ -7,5 +7,6 @@ export interface IUser{
     img?:string;
     address?:string;
     sdt?:string;
+    gender?: string;
     role?:string;
 }
