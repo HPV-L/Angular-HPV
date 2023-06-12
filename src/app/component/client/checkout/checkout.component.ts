@@ -62,7 +62,8 @@ export class CheckoutComponent {
           phone: this.productForm.value.phone || "",
           quantity: this.totalQuantity,
           total: this.totalPrice,
-          notes:this.productForm.value.notes || "",        
+          notes:this.productForm.value.notes || "",
+
         }
         console.log(listOder);
         

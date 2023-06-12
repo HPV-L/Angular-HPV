@@ -14,17 +14,11 @@ export class DetailOrderPageComponent {
     private orderService: OrderService,
     private AuthService: AuthService
   ){
-     this.orderService.getOrderById(this.idUser).subscribe( data =>{
+     this.orderService.getOrderByIdUser(this.idUser).subscribe( data =>{
         this.detailOrder = data
      })
   }
 
-  huyDon(id:string){
-    const confirm = window.confirm('Are you sure you want to cancel this order?')
-    if( confirm) {
-      this.orderService.removeOrder(id).subscribe(data => {
-        this.detailOrder = this.detailOrder.filter((item:any) => item._id !== id)
-      })
-    }
+  huyDon(){
   }
 }

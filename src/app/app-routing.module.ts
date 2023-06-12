@@ -25,6 +25,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order-page.component';
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
+import { OrderListComponent } from './pages/admin/order/order-list/order-list.component';
+import { OrderUpdateComponent } from './pages/admin/order/order-update/order-update.component';
 import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
 import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
 import { EditInfoComponent } from './component/client/edit-info/edit-info.component';
@@ -66,6 +68,7 @@ const routes: Routes = [
     {path: "category", component: AdminCategoryListComponent},
     {path:"category/:id/edit",component:AdminCategoryEditComponent},
     {path:"category/add",component:AdminCategoryAddComponent},
+
     // color
     {path: "color", component: ColorListComponent},
     {path:"color/:id/edit",component:ColorEditComponent},
@@ -75,6 +78,11 @@ const routes: Routes = [
     {path:"size/:id/edit",component:SizeEditComponent},
     {path:"size/add",component:SizeAddComponent},
     //user
+
+    //order
+    {path: "order", component: OrderListComponent},
+    {path: "order/:id/edit", component: OrderUpdateComponent},
+
     {path:"user",component:AdminUserListComponent}
   ]},
 

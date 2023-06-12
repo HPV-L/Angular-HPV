@@ -88,6 +88,8 @@ import { ContentDetailProductComponent } from './component/detail-product/conten
 // Drop zone 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
+import { OrderListComponent } from './pages/admin/order/order-list/order-list.component';
+import { OrderUpdateComponent } from './pages/admin/order/order-update/order-update.component';
 import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
 import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
 import { EditInfoComponent } from './component/client/edit-info/edit-info.component';
@@ -151,6 +153,8 @@ import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-
     BreadcrumbDetailProductComponent,
     ContentDetailProductComponent,
     CanceledOrderComponent,
+    OrderListComponent,
+    OrderUpdateComponent,
     AdminUserListComponent,
     AdminUserEditComponent,
     EditInfoComponent,
