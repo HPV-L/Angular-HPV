@@ -1,5 +1,6 @@
 import { StatusService } from './../../../../services/status.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { Table } from 'primeng/table';
 import { IOrder } from 'src/app/interfaces/order';
@@ -17,20 +18,29 @@ export class OrderListComponent implements OnInit{
     
     orders: IOrder[] = [];
 
-    status: IStatus[] = []
+    statusList: IStatus[] = []
 
     cols: any[] = [];
 
     rowsPerPageOptions = [5, 10, 20]; 
 
+    statusForm = this.formBuilder.group({
+      status:[""]
+    })
+
     constructor(private orderService: OrderService,
       private messageService: MessageService,
-      private StatusService: StatusService
+      private StatusService: StatusService,
+      private formBuilder: FormBuilder
       ){}
     ngOnInit(): void {
-      this.orderService.getAllOrder().subscribe(data => this.orders = data)
+      this.orderService.getAllOrder().subscribe(data => {
+        console.log(data)
+        this.orders = data}
+        )
 
-      this.StatusService.getAllStatus().subscribe(data => this.status = data)
+      
+      this.StatusService.getAllStatus().subscribe(data => this.statusList = data)
     }
       
     onGlobalFilter(table: Table, event: Event) {
