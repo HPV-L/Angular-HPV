@@ -88,6 +88,9 @@ import { ContentDetailProductComponent } from './component/detail-product/conten
 // Drop zone 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
+import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
+import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
+import { EditInfoComponent } from './component/client/edit-info/edit-info.component';
 
 
 @NgModule({
@@ -140,6 +143,9 @@ import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.co
     BreadcrumbDetailProductComponent,
     ContentDetailProductComponent,
     CanceledOrderComponent,
+    AdminUserListComponent,
+    AdminUserEditComponent,
+    EditInfoComponent,
    
 
   
