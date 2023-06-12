@@ -8,18 +8,10 @@ import { OrderService } from 'src/app/services/order.service';
   styleUrls: ['./canceled-order.component.scss']
 })
 export class CanceledOrderComponent {
-  listOrder:any =[];
-  constructor (private orderService:OrderService){
-    this.orderService.getOrderCanceled().subscribe( data =>{
-      this.listOrder = data
-   })
-  }
-  muaLai(id:string){
-    const confirm = window.confirm('Are you sure you want to repurchase this order?')
-    if( confirm) {
-      this.orderService.reBuyOrderCanceled(id).subscribe(data => {
-        this.listOrder = this.listOrder.filter((item:any) => item._id !== id)
-      })
-    }
+  constructor (
+    private orderService:OrderService
+    ){
+   }
+  muaLai(){
   }
 }

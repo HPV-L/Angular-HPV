@@ -1,7 +1,7 @@
 import { IProduct } from "./product";
 
 export interface IOrder{
-    _id?: number;   
+    _id?:number | string; 
     products?: IProduct[],
     idUser?: number,
     name?: string,
@@ -12,5 +12,5 @@ export interface IOrder{
     phone?:string,
     days?: string,
     notes?:string,
-    status?: string
+    status?: any,
 }

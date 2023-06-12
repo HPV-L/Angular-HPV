@@ -32,7 +32,7 @@ export class AppTopBarComponent implements OnInit {
         label: 'Infomation',
         items: [
           {
-            label: `${this.user.user.name}`,
+            label: `${this.user.user.username}`,
             icon: 'pi pi-user',
             url: '',
           },
@@ -51,6 +51,6 @@ export class AppTopBarComponent implements OnInit {
     
     // Đặt lại giá trị của biến người dùng
     this.user = null;
-    this.router.navigate(['/']);
+    location.href = "/"
   }
 }
