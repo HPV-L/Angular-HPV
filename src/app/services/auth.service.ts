@@ -22,9 +22,12 @@ export class AuthService {
   removetUsers(id: any): Observable<IUser[]> {
     return this.http.delete<IUser[]>(`http://localhost:8080/api/users/${id}`);
   }
+  getUser(id: any): Observable<IUser> {
+    return this.http.get<IUser>(`http://localhost:8080/api/users/${id}`);
+  }
   editUser(user: IUser): Observable<IUser> {
     return this.http.patch<IUser>(
-      `http://localhost:8080/api/users${user._id}`,
+      `http://localhost:8080/api/users/${user._id}`,
       user
     );
   }
