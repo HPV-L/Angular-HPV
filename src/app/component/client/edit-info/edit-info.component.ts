@@ -13,25 +13,25 @@ export class EditInfoComponent implements OnInit {
   infoUser!:IUser;
   selectedState: any = null;
   editInfoForm = this.formBuilder.group({
-    _id: ["",[Validators.required]],
     username: ["",[Validators.required]],
     email: ["",[Validators.required]],
     address: ["",[Validators.required]],
     sdt: ["",[Validators.required]],
-    // gender: ["",[Validators.required]],
+    gender: ["",[Validators.required]],
   })
-  dropdownItems = [
-    { name: 'Male', code: 'Option 1' },
-    { name: 'Female', code: 'Option 2' },
-    { name: 'Unknown', code: 'Option 3' },
+  dropdownItems  = [
+    { name: 'Male' },
+    { name: 'Female' },
+    { name: 'Unknown' },
   ];
   constructor (
     private authService: AuthService,
     private formBuilder: FormBuilder,
   ) {}
   ngOnInit():void {
+   
+    
     this.authService.getUser(this.idUser).subscribe(data => {     
-      console.log(data);
        
       this.infoUser = data;
       this.editInfoForm.patchValue({
@@ -39,7 +39,7 @@ export class EditInfoComponent implements OnInit {
         email: data.email || "",
         address: data.address || "",
         sdt: data.sdt || "",
-        // gender: data.gender || ""
+        gender: data.gender || ""
       })
     })
   }
@@ -53,7 +53,7 @@ export class EditInfoComponent implements OnInit {
         email: this.editInfoForm.value.email || "",
         address: this.editInfoForm.value.address || "",
         sdt: this.editInfoForm.value.sdt || "",
-        // gender: this.editInfoForm.value.gender || "",
+        gender: this.editInfoForm.value.gender || "",
         password:this.infoUser.password || ''
       }
       console.log(info);
