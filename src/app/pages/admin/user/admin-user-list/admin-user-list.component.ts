@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AdminUserListComponent {
 
 
-
+    authID:any
   categoryDialog: boolean = false;
 
   deleteCategoryDialog: boolean = false;
@@ -35,7 +35,6 @@ export class AdminUserListComponent {
 
   constructor(private AuthService: AuthService, private messageService: MessageService) { 
     this.AuthService.getAllUsers().subscribe(data =>{
-      console.log(data);
       this.categories = data
     }); 
   }
@@ -49,16 +48,14 @@ export class AdminUserListComponent {
 
   deleteSelectedProducts() {
       this.deleteCategorysDialog = true;
-     console.log(this.category);
+     
   }
 
 
   deleteProduct(ids :number,category: IUser  ) {
       this.deleteCategoryDialog = true;
-
-      this.AuthService.removetUsers(category._id).subscribe(() =>{
-        this.category = { ...category };
-    })
+      this.authID = { ...category };
+   
       
   }
 
@@ -72,7 +69,9 @@ export class AdminUserListComponent {
 
   confirmDelete() {
       this.deleteCategoryDialog = false;
-      this.categories = this.categories.filter(val => val._id !== this.category._id);
+      this.AuthService.removetUsers(this.authID._id).subscribe(() =>{
+        this.categories = this.categories.filter(val => val._id !== this.authID._id);
+      })    
       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
       this.category = {};
   }

@@ -14,7 +14,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class AdminProductListComponent implements OnInit {
 
     ProductCateID!:any  
-
+    productID:any
   productDialog: boolean = false;
 
   deleteProductDialog: boolean = false;
@@ -73,9 +73,8 @@ export class AdminProductListComponent implements OnInit {
 
   deleteProduct(product: IProduct) {
       this.deleteProductDialog = true;
-      this.productService.deleteProduct(product._id).subscribe(() =>{   
-        this.product = { ...product };
-    })
+      this.productID = { ...product };
+    
   }
 
   confirmDeleteSelected() {
@@ -86,6 +85,10 @@ export class AdminProductListComponent implements OnInit {
   }
 
   confirmDelete() {
+  
+      this.productService.deleteProduct(this.productID._id).subscribe(() =>{   
+        this.products = this.products.filter(val => val._id !== this.productID._id);
+      })
       this.deleteProductDialog = false;
       this.products = this.products.filter(val => val._id !== this.product._id);
       this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
