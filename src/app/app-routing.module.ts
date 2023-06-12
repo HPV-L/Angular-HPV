@@ -30,6 +30,12 @@ import { OrderUpdateComponent } from './pages/admin/order/order-update/order-upd
 import { AdminUserListComponent } from './pages/admin/user/admin-user-list/admin-user-list.component';
 import { AdminUserEditComponent } from './pages/admin/user/admin-user-edit/admin-user-edit.component';
 import { EditInfoComponent } from './component/client/edit-info/edit-info.component';
+import { ColorListComponent } from './pages/admin/attributes/color/color-list/color-list.component';
+import { ColorEditComponent } from './pages/admin/attributes/color/color-edit/color-edit.component';
+import { ColorAddComponent } from './pages/admin/attributes/color/color-add/color-add.component';
+import { SizeListComponent } from './pages/admin/attributes/size/size-list/size-list.component';
+import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-edit.component';
+import { SizeAddComponent } from './pages/admin/attributes/size/size-add/size-add.component';
 
 
 const routes: Routes = [
@@ -62,9 +68,21 @@ const routes: Routes = [
     {path: "category", component: AdminCategoryListComponent},
     {path:"category/:id/edit",component:AdminCategoryEditComponent},
     {path:"category/add",component:AdminCategoryAddComponent},
+
+    // color
+    {path: "color", component: ColorListComponent},
+    {path:"color/:id/edit",component:ColorEditComponent},
+    {path:"color/add",component:ColorAddComponent},
+    //sixe
+    {path: "size", component: SizeListComponent},
+    {path:"size/:id/edit",component:SizeEditComponent},
+    {path:"size/add",component:SizeAddComponent},
+    //user
+
     //order
     {path: "order", component: OrderListComponent},
     {path: "order/:id/edit", component: OrderUpdateComponent},
+
     {path:"user",component:AdminUserListComponent}
   ]},
 

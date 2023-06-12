@@ -24,7 +24,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Control',
                 items: [
                     {
-                        label: 'Products', icon: 'pi pi-fw pi-bookmark',
+                        label: 'Products', icon: 'pi pi-fw pi-database',
                         items: [
                             {label: 'List', icon: 'pi pi-fw pi-table', routerLink:['/admin/product']},
 
@@ -40,14 +40,59 @@ export class AppMenuComponent implements OnInit {
                         ]
                     },
                     {
+
+                        label: 'User', icon: 'pi pi-fw pi-user',
+
                         label: 'Order', icon: 'pi pi-fw pi-bookmark',
                         items: [
                             {label: 'List', icon: 'pi pi-fw pi-table', routerLink:['/admin/order']},
-                        label: 'User', icon: 'pi pi-fw pi-bookmark',
+                       
+
                         items: [
                             {label: 'List', icon: 'pi pi-fw pi-table', routerLink:['/admin/user']}
                         ]
-                    }
+                    },
+                    {
+                        label: 'Attributes',
+                        icon: 'pi pi-fw pi-pencil',
+                        items: [           
+                            {
+                                label: 'Color',
+                                icon: 'pi pi-fw pi-sliders-h',
+                                items: [
+                                    {
+                                        label: 'List Color',
+                                        icon: 'pi pi-fw pi-table',
+                                        routerLink: ['/admin/color']
+                                    },
+                                    {
+                                        label: 'Add new color',
+                                        icon: 'pi pi-fw pi-plus',
+                                        routerLink: ['/admin/color/add']
+                                    }
+                                   
+                                ]
+                            },
+                            {
+                                label: 'Size',
+                                icon: 'pi pi-fw pi-sliders-v',
+                                items: [
+                                    {
+                                        label: 'List Size',
+                                        icon: 'pi pi-fw pi-table',
+                                        routerLink: ['/admin/size']
+                                    },
+                                    {
+                                        label: 'Add Size',
+                                        icon: 'pi pi-fw pi-plus',
+                                        routerLink: ['/admin/size/add']
+                                    }
+                                   
+                                ]
+                            },
+                        
+                        ]
+                    },
                     
                 ]
             },

@@ -63,6 +63,7 @@ export class CheckoutComponent {
           quantity: this.totalQuantity,
           total: this.totalPrice,
           notes:this.productForm.value.notes || "",
+
         }
         console.log(listOder);
         

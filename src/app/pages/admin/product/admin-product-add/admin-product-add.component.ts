@@ -3,7 +3,6 @@ import { ProductService } from 'src/app/services/product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
-import { DateTime } from 'luxon';
 import { CategoryService } from 'src/app/services/category.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { ISize } from 'src/app/interfaces/size';

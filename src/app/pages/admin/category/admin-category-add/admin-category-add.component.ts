@@ -39,7 +39,7 @@ export class AdminCategoryAddComponent {
   onHandleSubmit(){
     if(this.categoryForm.valid){
       const category: ICategory ={    
-        name:this. categoryForm.value.name || "",
+        name:this.categoryForm.value.name || "",
       }
       this.CategoryService.addCategory(category).subscribe(data => {
        console.log(data);

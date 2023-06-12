@@ -44,7 +44,7 @@
           />
         </div>
 
-        <div class="field col-6">
+        <div class="field col-12">
           <label htmlFor="thumbnail">Ảnh</label>
           <input
             pInputTextarea
@@ -71,18 +71,6 @@
           </ngx-dropzone>
         </div>
 
-        <div class="field col-5">
-          <label htmlFor="address">Xem ảnh:</label>
-          <ngx-dropzone-image-preview
-            class="image-preview-container"
-            width="500"
-            height="auto"
-            ngProjectAs="ngx-dropzone-preview"
-            *ngFor="let f of files"
-            [file]="f"
-          >
-          </ngx-dropzone-image-preview>
-        </div>
 
         <div class="md:col-6">
           <label htmlFor="code">Mã sản phẩm</label>
@@ -109,7 +97,23 @@
           </select>
         </div>
 
-        <div class="md:col-6">
+        <div class="md:col-12">
+          <label htmlFor="code">Màu</label>
+          <div class="flex gap-2">
+            <div *ngFor="let color of colorList" class="field-checkbox">
+              <p-checkbox
+                name="group"
+                [value]="color._id"
+                [(ngModel)]="selectedColor"
+                [inputId]="color._id"
+                formControlName="colorId"
+              ></p-checkbox>
+              <label class="formcolor" [style.color]="color.hex" [for]="color._id">{{ color.name }}</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-12">
           <label htmlFor="code">Kích cỡ</label>
           <div class="gap-2">
             <div *ngFor="let size of sizeList" class="field-checkbox">
@@ -126,7 +130,7 @@
         </div> 
 
         
-        <div class="md:col-6">
+        <!-- <div class="md:col-12">
           <label htmlFor="code">Màu</label>
           <div class="gap-2">
             <div *ngFor="let color of colorList" class="field-checkbox">
@@ -136,16 +140,15 @@
                 [(ngModel)]="selectedColor"
                 [inputId]="color._id"
                 formControlName="colorId"
+               
               ></p-checkbox>
-              <label [for]="color._id">{{ color.name }}</label>
-              <div class="input-color" data-id="{{ color._id }}" [style.background]="color.hex"><span class="sr-only">Color Name</span></div>
+              <label style="color:'{{ color.hex }}';" [for]="color._id">{{ color.name }}</label>
             </div>
           </div>
-        </div> 
-
+        </div>  -->
 
         <div class="field col-12 md:col-1">
-          <button  type="submit" pButton>Thêm</button>
+          <button pButton pRipple type="submit" pButton>Thêm</button>
         </div>
       </div>
     </div>
