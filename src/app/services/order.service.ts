@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IOrder } from '../interfaces/order';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { Observable } from 'rxjs';
 export class OrderService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService
   ) { }
     addOrder(orders :IOrder):Observable<IOrder>{
       return this.http.post<IOrder>(`http://localhost:8080/api/order`,orders)
@@ -17,7 +19,17 @@ export class OrderService {
     getAllOrder():Observable<IOrder[]>{
       return this.http.get<IOrder[]>(`http://localhost:8080/api/order`)
     }
-    getOrderById(id :string):Observable<IOrder>{
+    getOrderByIdUser(id :string):Observable<IOrder>{
       return this.http.get<IOrder>(`http://localhost:8080/api/order/user/${id}`)
+    }
+    getOrderById(id :string):Observable<IOrder>{
+      return this.http.get<IOrder>(`http://localhost:8080/api/order/${id}`)
+    }
+    editOrder(order:IOrder):Observable<IOrder>{
+      const token = this.authService.getToken();
+  
+      // Tạo headers và thêm token vào headers
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+      return this.http.patch<IOrder>((`http://localhost:8080/api/order/`)+ `${order._id}`, order, { headers })
     }
 }

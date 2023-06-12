@@ -89,6 +89,7 @@ import { ContentDetailProductComponent } from './component/detail-product/conten
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
 import { OrderListComponent } from './pages/admin/order/order-list/order-list.component';
+import { OrderUpdateComponent } from './pages/admin/order/order-update/order-update.component';
 
 
 @NgModule({
@@ -142,6 +143,7 @@ import { OrderListComponent } from './pages/admin/order/order-list/order-list.co
     ContentDetailProductComponent,
     CanceledOrderComponent,
     OrderListComponent,
+    OrderUpdateComponent,
    
 
   

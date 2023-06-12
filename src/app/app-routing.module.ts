@@ -26,6 +26,7 @@ import { DetailOrderPageComponent } from './pages/detail-order-page/detail-order
 import { DetailProductPageComponent } from './pages/detail-product-page/detail-product-page.component';
 import { CanceledOrderComponent } from './pages/canceled-order/canceled-order.component';
 import { OrderListComponent } from './pages/admin/order/order-list/order-list.component';
+import { OrderUpdateComponent } from './pages/admin/order/order-update/order-update.component';
 
 
 const routes: Routes = [
@@ -59,7 +60,7 @@ const routes: Routes = [
     {path:"category/add",component:AdminCategoryAddComponent},
     //order
     {path: "order", component: OrderListComponent},
-
+    {path: "order/:id/edit", component: OrderUpdateComponent},
   ]},
 
 

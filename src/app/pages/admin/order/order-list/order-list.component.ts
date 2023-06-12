@@ -38,7 +38,6 @@ export class OrderListComponent implements OnInit{
         console.log(data)
         this.orders = data}
         )
-
       
       this.StatusService.getAllStatus().subscribe(data => this.statusList = data)
     }

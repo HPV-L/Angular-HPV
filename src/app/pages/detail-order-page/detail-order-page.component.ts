@@ -14,7 +14,7 @@ export class DetailOrderPageComponent {
     private orderService: OrderService,
     private AuthService: AuthService
   ){
-     this.orderService.getOrderById(this.idUser).subscribe( data =>{
+     this.orderService.getOrderByIdUser(this.idUser).subscribe( data =>{
         this.detailOrder = data
      })
   }
