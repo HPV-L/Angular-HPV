@@ -99,6 +99,8 @@ import { SizeAddComponent } from './pages/admin/attributes/size/size-add/size-ad
 import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-edit.component';
 
 
+
+
 @NgModule({
   declarations: [
     

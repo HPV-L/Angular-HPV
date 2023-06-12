@@ -3,6 +3,7 @@ import { FormBuilder , Validators} from '@angular/forms';
 import { SizeService } from 'src/app/services/size.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { ISize } from 'src/app/interfaces/size';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-size-edit',
@@ -28,7 +29,7 @@ export class SizeEditComponent {
     });
   }
  SizeForm = this.formBuilder.group({
-    name: ["",[Validators.required]],
+  name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10), CustomValidators.nameValidator()]]
   })
   onHandleSubmit(){
     if(this.SizeForm.valid){

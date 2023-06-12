@@ -3,6 +3,7 @@ import { FormBuilder,Validators } from '@angular/forms';
 import { ColorService } from 'src/app/services/color.service';
 import { Router ,ActivatedRoute } from '@angular/router';
 import { IColor } from 'src/app/interfaces/color';
+import { CustomValidators } from './custom-validators';
 
 
 @Component({
@@ -30,11 +31,10 @@ export class ColorEditComponent {
     });
   }
  ColorForm = this.formBuilder.group({
-    name: ["",[Validators.required]],
-    hex: ["",[Validators.required]],
+    name: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(15), CustomValidators.nameValidator()]],
+    hex: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(15), CustomValidators.nameValidator()]],
   })
-
-
+  
   onHandleSubmit(){
     if(this.ColorForm.valid){
       const color = {

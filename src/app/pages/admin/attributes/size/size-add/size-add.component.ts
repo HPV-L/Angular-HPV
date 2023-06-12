@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder , Validators} from '@angular/forms';
 import { SizeService } from 'src/app/services/size.service';
 import { Router } from '@angular/router';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-size-add',
@@ -18,7 +19,7 @@ export class SizeAddComponent {
 
   }
  SizeForm = this.formBuilder.group({
-    name: ["",[Validators.required]],
+  name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), CustomValidators.nameValidator()]]
   })
   onHandleSubmit(){
     if(this.SizeForm.valid){

@@ -12,5 +12,5 @@ export interface IOrder{
     phone?:string,
     days?: string,
     notes?:string,
-    status?: string
+    
 }

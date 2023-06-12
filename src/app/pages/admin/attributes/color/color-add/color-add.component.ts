@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { ColorService } from 'src/app/services/color.service';
 import { Router } from '@angular/router';
+import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'app-color-add',
@@ -17,8 +18,8 @@ export class ColorAddComponent {
 
   }
  ColorForm = this.formBuilder.group({
-    name: ["",[Validators.required]],
-    hex: ["",[Validators.required]],
+    name: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(15), CustomValidators.nameValidator()]],
+    hex: ["",[Validators.required, Validators.minLength(5), Validators.maxLength(15), CustomValidators.nameValidator()]],
   })
 
 
