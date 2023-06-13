@@ -11,7 +11,7 @@ import { IUser } from 'src/app/interfaces/user';
 })
 export class SigninComponent {
   userForm = this.formBuilder.group({
-    email: [null, [Validators.required]],
+    email: [null,  [Validators.required, Validators.email]],
     password: [null, [Validators.required]],
   });
 

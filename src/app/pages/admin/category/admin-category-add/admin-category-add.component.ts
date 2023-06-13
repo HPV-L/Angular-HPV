@@ -16,7 +16,6 @@ export class AdminCategoryAddComponent {
   @Input() imageUrl!: string;
   categoryForm = this.formBuilder.group({
     name: ["",[Validators.required]],
-    
   })
 
 
