@@ -11,10 +11,10 @@ import { IUser } from 'src/app/interfaces/user';
 })
 export class SignupComponent {
   userForm = this.formBuilder.group({
-    name:[null,[Validators.required]],
-    email:[null,[Validators.required]],
-    password:[null,[Validators.required]],
-    confirmPassword:[null,[Validators.required]]
+    name:[null,[Validators.required,Validators.minLength(5)]] ,
+    email:[null,[Validators.required, Validators.email]],
+    password:[null, [Validators.required, Validators.pattern(/^(?=.*[A-Z]).{8,}$/)]],
+    confirmPassword:[null, [Validators.required, Validators.pattern(/^(?=.*[A-Z]).{8,}$/)]]
   })
 
   constructor(
@@ -35,15 +35,12 @@ export class SignupComponent {
             username:this.userForm.value.name || "",
             email:this.userForm.value.email || "",
             password:this.userForm.value.password || "",
-            // img:"https://static1.s123-cdn-static-a.com/uploads/3107639/800_5e9de73574b25.png",
-            // address:"Chưa cập nhật",
-            // sdt:"Chưa cập nhật",
             confirmPassword:this.userForm.value.confirmPassword || "",
           
           }
           this.authService.signup(user).subscribe(
-            (response) =>{
-              console.log('Đăng kí thành công',response);
+            (response :any) =>{
+              alert('Đăng kí thành công');
             },
             (error) =>{
               console.error('đã xảy ra lỗi' , error);
