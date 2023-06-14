@@ -15,6 +15,7 @@ import { CommentService } from 'src/app/services/comment.service';
 })
 export class ContentDetailProductComponent implements OnInit{
   product: any;
+  user: any;
   quantitys?: number;
   countCMT: any;
   carts: any[] = this.CartService.getCart();
