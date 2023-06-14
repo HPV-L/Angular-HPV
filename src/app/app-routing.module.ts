@@ -36,6 +36,7 @@ import { ColorAddComponent } from './pages/admin/attributes/color/color-add/colo
 import { SizeListComponent } from './pages/admin/attributes/size/size-list/size-list.component';
 import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-edit.component';
 import { SizeAddComponent } from './pages/admin/attributes/size/size-add/size-add.component';
+import { CommentComponent } from './pages/admin/comment/comment.component';
 
 
 const routes: Routes = [
@@ -82,6 +83,9 @@ const routes: Routes = [
     //order
     {path: "order", component: OrderListComponent},
     {path: "order/:id/edit", component: OrderUpdateComponent},
+
+    //Comments
+    {path: "comment", component: CommentComponent},
 
     {path:"user",component:AdminUserListComponent}
   ]},

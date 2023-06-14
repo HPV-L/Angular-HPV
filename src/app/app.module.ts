@@ -99,6 +99,7 @@ import { ColorEditComponent } from './pages/admin/attributes/color/color-edit/co
 import { SizeListComponent } from './pages/admin/attributes/size/size-list/size-list.component';
 import { SizeAddComponent } from './pages/admin/attributes/size/size-add/size-add.component';
 import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-edit.component';
+import { CommentComponent } from './pages/admin/comment/comment.component';
 
 
 
@@ -164,6 +165,7 @@ import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-
     SizeListComponent,
     SizeAddComponent,
     SizeEditComponent,
+    CommentComponent,
 
   ],
   imports: [
