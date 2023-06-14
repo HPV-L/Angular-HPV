@@ -10,7 +10,6 @@ import { SizeService } from 'src/app/services/size.service';
 import { IColor } from 'src/app/interfaces/color';
 import { ColorService } from 'src/app/services/color.service';
 
-
 @Component({
   selector: 'app-admin-product-add',
   templateUrl: './admin-product-add.component.html',
@@ -102,7 +101,6 @@ export class AdminProductAddComponent {
                   
       })
   }
-
     
     onRemove(event:any) {
       console.log(event);

@@ -164,9 +164,6 @@ import { SizeEditComponent } from './pages/admin/attributes/size/size-edit/size-
     SizeListComponent,
     SizeAddComponent,
     SizeEditComponent,
-   
-
-  
 
   ],
   imports: [
