@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/interfaces/product';
@@ -13,7 +13,7 @@ import { CommentService } from 'src/app/services/comment.service';
   templateUrl: './content-detail-product.component.html',
   styleUrls: ['./content-detail-product.component.scss']
 })
-export class ContentDetailProductComponent {
+export class ContentDetailProductComponent implements OnInit{
   product: any;
   quantitys?: number;
   countCMT: any;
@@ -31,31 +31,37 @@ export class ContentDetailProductComponent {
     private CartService: CartService,
     private formBuilder: FormBuilder,
     private commentService: CommentService,
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.route.paramMap.subscribe(param => {
       const id = String(param.get('slug'));
       this.productService.getProductBySlug(id).subscribe(product => {
         this.product = product;
         console.log(product);
 
-        const productId = String(param.get('id'));
-        this.commentService.getcommentByIdProducts(productId).subscribe(data => {
-          this.comments = data
-          this.countCMT = this.comments.length
-        })
-      }, error => console.log(error.message))
+        const productId = String(this.product._id); // Lấy ID của sản phẩm từ đối tượng sản phẩm
+        console.log(productId); // Kiểm tra giá trị productId
+        this.commentForm.patchValue({
+          idUser: this.commentForm.get('idUser')?.value,
+          productId: productId
+        });
 
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        const { user: { _id } } = JSON.parse(storedUser);
-        const id = _id;
-        // Set idUser in form control
-        this.commentForm.get('idUser')?.setValue(id);
-      }
+        this.commentService.getcommentByIdProducts(productId).subscribe((comment: any) => {
+          this.comments = comment.comments;
+          this.countCMT = this.comments.length;
+        });
+      }, error => console.log(error.message));
+    });
 
-    })
-  }
-
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const { user: { _id } } = JSON.parse(storedUser);
+      const id = _id;
+      // set idUser in formData
+      this.commentForm.get('idUser')?.setValue(id);
+    }
+}
   onAddCart(product: IProduct): any {
 
     let index = this.carts.findIndex((item) => {
@@ -79,8 +85,14 @@ export class ContentDetailProductComponent {
     alert("thêm vào giỏ hàng thành công")
   }
 
+  resetForm() {
+    this.commentForm.reset(); // Đặt lại giá trị của form về trạng thái ban đầu
+  }
+
   addComment() {
     console.log("abc")
+    const productId = this.product._id; // Lấy ID sản phẩm từ thuộc tính _id của đối tượng product
+    this.commentForm.patchValue({ productId: productId });
     const comment: IComment = {
       idUser: this.commentForm.value.idUser || "",
       productId: this.commentForm.value.productId || "",
@@ -89,8 +101,25 @@ export class ContentDetailProductComponent {
     console.log(comment)
     this.commentService.addcomment(comment).subscribe(comment => {
       console.log(comment)
-      alert("Thêm cmt thành công")
+      this.route.paramMap.subscribe(params => {
+        const productId = this.product._id;
+        this.commentService.getcommentByIdProducts(productId).subscribe((comment: any) => {
+          this.comments = comment.comments;
+          this.countCMT = this.comments.length
+        })
+      });
+      this.resetForm();
     })
   }
 
+  onHandleRemove(id: string | any) {
+    alert("Xoa binh luan thanh cong !")
+    // Thực hiện xoá bình luận
+    this.commentService.removeComment(id).subscribe(comment => {
+      const newComment = this.comments.filter((cmt:any) => cmt._id != id);
+      this.comments = newComment;
+      this.countCMT = this.comments.length
+    });
+  }
+  
 }
