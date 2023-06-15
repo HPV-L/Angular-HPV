@@ -1,109 +1,129 @@
-import { Component , Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IProduct } from 'src/app/interfaces/product';
-import { DateTime } from 'luxon';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
+import { IColor } from 'src/app/interfaces/color';
+import { ISize } from 'src/app/interfaces/size';
+import { SizeService } from 'src/app/services/size.service';
+import { ColorService } from 'src/app/services/color.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-admin-product-edit',
   templateUrl: './admin-product-edit.component.html',
-  styleUrls: ['./admin-product-edit.component.scss']
+  styleUrls: ['./admin-product-edit.component.scss'],
 })
 export class AdminProductEditComponent {
+  colorList!: IColor[];
+  imageUploaded: any = null;
+  files: File[] = [];
+  ProductCateID!: any;
   selectedState: any = null;
-  productList!:IProduct
+  sizeList!: ISize[];
+  selectedSize: any[] = [];
+  selectedColor: any[] = [];
+  product!:any;
   @Input() imageUrl!: string;
   productForm = this.formBuilder.group({
-    name: ["",[Validators.required]],
-    quantity:[0,[Validators.required]],
-    importPrice:  [0,[Validators.required]],
-    price:[0,[Validators.required]],
-    description:["",[Validators.required]],
-    image:["",[Validators.required]],
-    ProductCateID:[0,[Validators.required]],
-    code:["",[Validators.required]]
-  })
-  // time
-  currentDateTime: string;
-  // category
- 
+    code: ['', [Validators.required]],
+    name: ['', [Validators.required]],
+    thumbnail: ['', [Validators.required]],
+    quantity: [
+      0,
+      [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+    ],
+    importPrice: [
+      0,
+      [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
+    ],
+    price: [0, [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    description: ['', [Validators.required]],
+    categoryId: ['', [Validators.required]],
+    sizeId: [[], [Validators.required]],
+    colorId: [[], [Validators.required]],
+  });
 
   constructor(
     private productService: ProductService,
-    private CategoryService:CategoryService,
-    private formBuilder : FormBuilder,
+    private CategoryService: CategoryService,
+    private sizeService: SizeService,
+    private colorService: ColorService,
+    private uploadService: UploadService,
+    private formBuilder: FormBuilder,
+    private redirect: Router,
     private route: ActivatedRoute,
-    private redirect: Router
-  ){
-    const vietnamTimeZone = 'Asia/Ho_Chi_Minh';
-    const now = DateTime.now().setZone(vietnamTimeZone);
-    this.currentDateTime = now.toFormat('yyyy-MM-dd HH:mm:ss');
-    console.log(this.currentDateTime);
-    this.route.paramMap.subscribe( param =>{
-      const id = Number(param.get('id'))
-      console.log(id);
-      
-      this.productService.getProductById(id).subscribe( product =>{
-        console.log(product);
-        
-        this.productList = product
+  ) {
+    this.route.paramMap.subscribe(param => {
+      const id = String(param.get('id'));
+      this.productService.getProductById(id).subscribe((data:any) => {
+        this.product = data;
         this.productForm.patchValue({
-          name: this.productList.name,
-          quantity:this.productList.quantity,
-          price:this.productList.price,
-          description:this.productList.description,
-          image:this.productList.thumbnail,
-          // category:this.dropdownItems,
-          
-        })
-      })
-    })
-    
-    this.CategoryService.getAllCategory().subscribe(data => {
-      this.ProductCateID = data
-    })
+          code: data.code,
+    name: data.name,
+    thumbnail: data.thumbnail,
+    quantity: data.quantity,
+    importPrice:data.importPrice,
+    price: data.price,
+    description:data.description,
+    categoryId:data.categoryId,
+    sizeId: data.sizeId,
+    colorId: data.colorId,
+        });
+      });
+    });
+    this.CategoryService.getAllCategory().subscribe((data) => {
+      this.ProductCateID = data;
+    });
+    this.sizeService.getAllSize().subscribe((data) => {
+      this.sizeList = data;
+    });
+    this.colorService.getAllColor().subscribe((data) => {
+      this.colorList = data;
+    });
   }
-
-  ProductCateID!:any
- 
-
-  // hiện ảnh
-  previewImageUrl!: string;
-  onImageSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.previewImageUrl = reader.result as string;
-      };
-      reader.readAsDataURL(file);
-    }
-  }
- 
-
 
   // add
-  onHandleSubmit(){
-    if(this.productForm.valid){
-      const product: IProduct ={    
-        _id: this.productList._id,
-        code:this.productForm.value.code || "",
-        name:this.productForm.value.name || "",
-        description:this.productForm.value.description || "",
-        price:this.productForm.value.price || 0,              
-        quantity:this.productForm.value.quantity || 0,
-        thumbnail:this.productForm.value.image || "",
+  async onHandleSubmit() {
+    const product: any = {
+      _id: this.product._id,
+      code: this.productForm.value.code || '',
+      name: this.productForm.value.name || '',
+      thumbnail: this.imageUploaded || '',
+      quantity: this.productForm.value.quantity || 0,
+      importPrice: this.productForm.value.importPrice || 0,
+      price: this.productForm.value.price || 0,
+      description: this.productForm.value.description || '',
+      categoryId: this.productForm.value.categoryId || '',
+      sizeId: this.productForm.value.sizeId || [],
+      colorId: this.productForm.value.colorId || [],
+    };
+    console.log(product);
 
-      }
-      this.productService.editProduct(product).subscribe(product => {
-        console.log(product);
-      alert("Thêm thành công")
-        this.redirect.navigate(["/admin/product"])
-       
-      })
-    }
+    this.productService.editProduct(product).subscribe((product) => {
+      // console.log(product);
+      alert('Cập nhật thành công');
+      this.redirect.navigate(['/admin/product']);
+    });
+  }
+  onSelect(event: any) {
+    this.files.push(...event.addedFiles);
+
+    if (!this.files[0]) alert('Upload false');
+
+    const file_data = this.files[0];
+    const data = new FormData();
+    data.append('file', file_data);
+    data.append('upload_preset', 'angular-cloudinary');
+    data.append('cloud_name', 'dxa8ks06k');
+    this.uploadService.uploadImage(data).subscribe(async (res) => {
+      this.imageUploaded = await res.secure_url;
+    });
+  }
+
+  onRemove(event: any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
   }
 }

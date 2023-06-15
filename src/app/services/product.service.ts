@@ -35,7 +35,7 @@ export class ProductService {
 
     // Tạo headers và thêm token vào headers
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.patch<IProduct>(this.apiUrl + `${product._id}`, product, { headers })
+    return this.http.patch<IProduct>(this.apiUrl + `/${product._id}`, product, { headers })
   }
   deleteProduct(id :any): Observable<IProduct>{
     const token = this.authService.getToken();
