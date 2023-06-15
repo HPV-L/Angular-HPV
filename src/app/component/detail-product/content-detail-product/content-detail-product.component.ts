@@ -16,6 +16,7 @@ import { CommentService } from 'src/app/services/comment.service';
 export class ContentDetailProductComponent implements OnInit{
   product: any;
   user: any;
+  idUserComment: any;
   quantitys?: number;
   countCMT: any;
   carts: any[] = this.CartService.getCart();
@@ -40,7 +41,7 @@ export class ContentDetailProductComponent implements OnInit{
       this.productService.getProductBySlug(id).subscribe(product => {
         this.product = product;
         console.log(product);
-
+        
         const productId = String(this.product._id); // Lấy ID của sản phẩm từ đối tượng sản phẩm
         console.log(productId); // Kiểm tra giá trị productId
         this.commentForm.patchValue({
@@ -61,6 +62,8 @@ export class ContentDetailProductComponent implements OnInit{
       const id = _id;
       // set idUser in formData
       this.commentForm.get('idUser')?.setValue(id);
+      this.idUserComment = id
+      console.log("comment?.idUser._id", this.idUserComment)
     }
 }
   onAddCart(product: IProduct): any {
@@ -91,7 +94,6 @@ export class ContentDetailProductComponent implements OnInit{
   }
 
   addComment() {
-    console.log("abc")
     const productId = this.product._id; // Lấy ID sản phẩm từ thuộc tính _id của đối tượng product
     this.commentForm.patchValue({ productId: productId });
     const comment: IComment = {
